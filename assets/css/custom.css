@@ -1,0 +1,1052 @@
+/* =========================================
+   PORTFOLIO DESIGN
+   Warm Cream + Navy + Gold
+   ========================================= */
+
+/* ---------- GENERAL ---------- */
+
+html,
+body {
+    background-color: #fffaf2;
+    color: #10233f;
+}
+
+main {
+    width: 94% !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    background: transparent;
+}
+
+/* Teksti normal në faqe */
+body {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #10233f !important;
+}
+
+h1 {
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.55rem;
+}
+
+p,
+li {
+    font-size: 1.08rem;
+}
+
+hr {
+    border-color: #e6c98f !important;
+}
+
+
+/* =========================================
+   TOP MENU
+   ========================================= */
+
+header a {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 5px;
+    transition: 0.2s ease;
+}
+
+.main-menu {
+    gap: 30px !important;
+}
+
+.main-menu > a:first-child {
+    text-decoration: none !important;
+    border: 1px solid #9b7a47;
+    border-radius: 9px;
+    padding: 9px 20px !important;
+}
+
+
+/* =========================================
+   PROFILE
+   ========================================= */
+
+/* Më shumë hapësirë nga menuja */
+main > article:first-child {
+    margin-top: 55px !important;
+    margin-bottom: 35px !important;
+}
+
+/* Emri */
+main > article:first-child h1 {
+    font-size: 3.1rem !important;
+    line-height: 1.15 !important;
+    font-weight: 800 !important;
+    margin-bottom: 14px !important;
+}
+
+/*
+   Zmadhojmë bllokun e profilit.
+   Ky selektor te faqja jote ka funksionuar.
+*/
+main > article:first-child > header {
+    transform: scale(1.15);
+    transform-origin: top center;
+    margin-bottom: 45px !important;
+}
+
+/* Ikonat */
+main > article:first-child > header svg {
+    width: 38px !important;
+    height: 38px !important;
+}
+
+/* Hapësirë ndërmjet elementeve të profilit */
+main > article:first-child > header a {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+
+/* =========================================
+   MY PROJECTS
+   ========================================= */
+
+main > section {
+    margin-top: 2px !important;
+}
+
+main > section > h2 {
+    font-size: 2.3rem !important;
+    font-weight: 800 !important;
+    margin-bottom: 45px !important;
+}
+
+
+/* =========================================
+   PROJECT GRID
+   ========================================= */
+
+section.grid {
+    gap: 38px !important;
+}
+
+
+/* =========================================
+   PROJECT CARDS
+   ========================================= */
+
+.article-link--card {
+    height: auto !important;
+
+    border: 1px solid #e5dccd !important;
+    border-radius: 18px !important;
+
+    background: #fffdf9 !important;
+
+    overflow: hidden !important;
+
+    box-shadow:
+            0 6px 20px rgba(16, 35, 63, 0.07);
+
+    transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
+}
+
+.article-link--card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+            0 15px 35px rgba(16, 35, 63, 0.13);
+}
+
+
+/* ---------- PROJECT IMAGES ---------- */
+
+.thumbnail_card {
+    aspect-ratio: 4 / 3 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    background: #ffffff;
+}
+
+.thumbnail_card img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+
+    transition: transform 0.35s ease;
+}
+
+.article-link--card:hover .thumbnail_card img {
+    transform: scale(1.025);
+}
+
+
+/* ---------- CARD TEXT ---------- */
+
+/* Titulli i projektit */
+.article-link--card h2 {
+    font-size: 1.55rem !important;
+    font-weight: 750 !important;
+    line-height: 1.3 !important;
+    color: #10233f !important;
+}
+
+/* Date + words + reading time */
+.article-link--card .text-sm {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+}
+
+.text-neutral-500 {
+    color: #9a6a25 !important;
+}
+
+
+/* =========================================
+   ARTICLE / PROJECT PAGES
+   ========================================= */
+
+article {
+    border-radius: 14px;
+}
+
+article .prose:not(:empty) {
+    background: #fffdf8;
+
+    border: 1px solid #ead8b5;
+    border-radius: 18px;
+
+    padding: 42px 50px;
+    margin-top: 40px;
+
+    font-size: 1.1rem;
+
+    box-shadow:
+            0 8px 25px rgba(16, 35, 63, 0.05);
+}
+
+article .prose:empty {
+    display: none;
+}
+
+article .prose h2 {
+    font-size: 2rem !important;
+    font-weight: 700;
+
+    color: #10233f !important;
+
+    border-bottom: 1px solid #e5c785;
+
+    padding-bottom: 12px;
+    margin-top: 42px;
+    margin-bottom: 22px;
+}
+
+article .prose h3 {
+    font-size: 1.55rem !important;
+    margin-top: 32px;
+}
+
+article .prose p {
+    font-size: 1.1rem !important;
+    line-height: 1.85;
+    margin-bottom: 20px;
+}
+
+article .prose ul {
+    padding-left: 28px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+article .prose li {
+    font-size: 1.08rem !important;
+    margin-bottom: 12px;
+}
+
+article .prose li::marker {
+    color: #d29a2e;
+}
+
+
+/* =========================================
+   LINKS
+   ========================================= */
+
+.prose a {
+    color: #b7791f;
+    text-decoration-color: #d6a84b;
+}
+
+.prose a:hover {
+    color: #8c5a16;
+}
+
+
+/* =========================================
+   VIEW ALL PROJECTS
+   ========================================= */
+
+main section button {
+    font-size: 1.05rem !important;
+    font-weight: 600 !important;
+
+    border: 1px solid #c9953c !important;
+    border-radius: 10px !important;
+
+    padding: 12px 24px !important;
+
+    color: #10233f !important;
+
+    transition: 0.2s ease;
+}
+
+main section button:hover {
+    background-color: #10233f !important;
+    color: #fffaf2 !important;
+    border-color: #10233f !important;
+}
+
+/* =========================================
+   DATAMATIKER PORTFOLIO - TOP LEFT
+   ========================================= */
+
+/* Vetëm butoni/logo Datamatiker Portfolio */
+.main-menu > a:first-child {
+    font-size: 1.45rem !important;
+    font-weight: 750 !important;
+
+    color: #fffaf2 !important;
+    background-color: #10233f !important;
+
+    border: 1px solid #10233f !important;
+    border-radius: 10px !important;
+
+    padding: 10px 22px !important;
+
+    text-decoration: none !important;
+
+    transition: all 0.2s ease;
+}
+
+/* Hover gold */
+.main-menu > a:first-child:hover {
+    background-color: #c9953c !important;
+    border-color: #c9953c !important;
+    color: #ffffff !important;
+}
+
+/*  menu ned*/
+header {
+    padding-top: 20px !important;
+}
+
+/* =========================================
+   WARM LUXURY COLORS
+   ========================================= */
+
+/* Background - krem i ngrohtë */
+html,
+body {
+    background-color: #F8F1E7 !important;
+}
+
+/* Teksti kryesor - navy */
+body,
+h1,
+h2,
+h3,
+h4 {
+    color: #102A43 !important;
+}
+
+/* Datamatiker Portfolio */
+.main-menu > a:first-child {
+    background-color: #102A43 !important;
+    border-color: #102A43 !important;
+    color: #FFF8EE !important;
+}
+
+/* Datamatiker Student + metadata */
+.text-neutral-500 {
+    color: #A66B1F !important;
+}
+
+/* Project cards */
+.article-link--card {
+    background-color: #FFFCF7 !important;
+    border: 1px solid #E2CFB3 !important;
+
+    box-shadow:
+            0 8px 24px rgba(16, 42, 67, 0.08);
+}
+
+/* Card hover */
+.article-link--card:hover {
+    border-color: #C58A35 !important;
+
+    box-shadow:
+            0 16px 35px rgba(16, 42, 67, 0.14);
+}
+
+/* Project titles */
+.article-link--card h2 {
+    color: #102A43 !important;
+}
+
+/* Links */
+.prose a {
+    color: #B8751A !important;
+    text-decoration-color: #D7A34A !important;
+}
+
+/* View All Projects */
+main section button {
+    background-color: #102A43 !important;
+    color: #FFF8EE !important;
+    border: 1px solid #102A43 !important;
+}
+
+main section button:hover {
+    background-color: #B8751A !important;
+    border-color: #B8751A !important;
+    color: white !important;
+}
+
+/* Article boxes */
+article .prose:not(:empty) {
+    background-color: #FFFCF7 !important;
+    border-color: #E2CFB3 !important;
+}
+
+/* Gold details */
+hr,
+article .prose h2 {
+    border-color: #D8B36A !important;
+}
+/* =========================================
+   BIG VILLA GALLERY
+   ========================================= */
+
+.villa-gallery {
+    width: 900px !important;
+    max-width: 90vw !important;
+    margin: 40px auto !important;
+
+    /* del nga kufizimi i article */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* FOTO KRYESORE */
+.villa-main {
+    width: 100% !important;
+}
+
+.villa-main > img {
+    width: 100% !important;
+    height: 600px !important;
+    object-fit: cover !important;
+    border-radius: 18px !important;
+}
+
+/* 7 FOTOT E VOGLA */
+.villa-thumbnails {
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    gap: 12px !important;
+    margin-top: 18px !important;
+}
+
+.villa-thumbnails img {
+    width: 100% !important;
+    height: 105px !important;
+    object-fit: cover !important;
+    border-radius: 9px !important;
+}
+
+/* SHIGJETAT */
+.villa-arrow {
+    width: 55px !important;
+    height: 55px !important;
+    font-size: 30px !important;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+
+    .villa-gallery {
+        width: 95vw !important;
+    }
+
+    .villa-main > img {
+        height: 350px !important;
+    }
+
+    .villa-thumbnails {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+
+    .villa-thumbnails img {
+        height: 80px !important;
+    }
+}
+
+
+/* =========================================
+   VILLA ROOM BOOKING - FIX
+   ========================================= */
+
+/* Mos vendos kutinë e bardhë rreth Villa content */
+article:has(.villa-gallery) .prose {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    padding: 0 !important;
+    margin-top: 30px !important;
+
+    max-width: none !important;
+    width: 100% !important;
+}
+
+/* Galeria */
+article:has(.villa-gallery) .villa-gallery {
+    width: 900px !important;
+    max-width: 90vw !important;
+    margin: 40px auto !important;
+}
+
+/* Foto kryesore */
+article:has(.villa-gallery) .villa-main > img {
+    width: 100% !important;
+    height: 600px !important;
+    object-fit: cover !important;
+    border-radius: 18px !important;
+}
+
+/* =========================================
+   ABOUT - BIGGER
+   ========================================= */
+
+header nav[aria-label="Main menu"] a[href="/about/"] span {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+}
+
+/* =========================================
+   VILLA ROOM BOOKING - GALLERY
+   ========================================= */
+
+/* Galeria më e madhe */
+.villa-gallery {
+    width: 100% !important;
+    max-width: 1250px !important;
+    margin: 45px auto !important;
+}
+
+/* =========================================
+   BUTTONS - DevLog / Report / Diagrams / Technologies
+   ========================================= */
+
+.villa-gallery + * {
+    margin-top: 0;
+}
+
+/* Linket e projektit */
+article .prose a[href*="devlog"],
+article .prose a[href*="report"],
+article .prose a[href*="diagrams"],
+article .prose a[href*="technologies"] {
+    font-size: 1.35rem !important;
+    font-weight: 700 !important;
+
+    padding: 10px 20px !important;
+
+    border: 1.5px solid #c9953c !important;
+    border-radius: 10px !important;
+
+    color: #b7791f !important;
+    background: #fffdf8 !important;
+
+    text-decoration: none !important;
+
+    display: inline-block !important;
+
+    transition: all 0.2s ease;
+}
+
+article .prose a[href*="devlog"]:hover,
+article .prose a[href*="report"]:hover,
+article .prose a[href*="diagrams"]:hover,
+article .prose a[href*="technologies"]:hover {
+    background: #10233f !important;
+    border-color: #10233f !important;
+    color: #ffffff !important;
+}
+
+
+/* =========================================
+   MAIN PHOTO
+   ========================================= */
+
+.villa-main {
+    position: relative;
+    width: 100% !important;
+}
+
+/* FOTO SHUMË MË E MADHE */
+.villa-main > img {
+    width: 100% !important;
+    height: 650px !important;
+
+    object-fit: cover !important;
+    display: block;
+
+    border-radius: 20px !important;
+}
+
+
+/* =========================================
+   ARROWS
+   ========================================= */
+
+.villa-arrow {
+    position: absolute !important;
+
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+
+    width: 58px !important;
+    height: 58px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border: none !important;
+    border-radius: 50% !important;
+
+    background: rgba(255,255,255,0.95) !important;
+    color: #10233f !important;
+
+    font-size: 30px !important;
+
+    cursor: pointer;
+
+    z-index: 10;
+}
+
+.villa-prev {
+    left: 20px !important;
+}
+
+.villa-next {
+    right: 20px !important;
+}
+
+
+/* =========================================
+   COUNTER
+   ========================================= */
+
+.villa-counter {
+    position: absolute !important;
+
+    bottom: 20px !important;
+    left: 50% !important;
+
+    transform: translateX(-50%) !important;
+
+    background: rgba(16,35,63,0.85) !important;
+    color: white !important;
+
+    padding: 8px 18px !important;
+
+    border-radius: 22px !important;
+
+    font-size: 17px !important;
+    font-weight: 600 !important;
+}
+
+
+/* =========================================
+   THUMBNAILS
+   ========================================= */
+
+.villa-thumbnails {
+    display: grid !important;
+
+    grid-template-columns: repeat(7, 1fr) !important;
+
+    gap: 16px !important;
+
+    margin-top: 22px !important;
+}
+
+.villa-thumbnails img {
+    width: 100% !important;
+    height: 120px !important;
+
+    object-fit: cover !important;
+
+    border-radius: 12px !important;
+
+    cursor: pointer;
+
+    opacity: 0.75;
+
+    border: 2px solid transparent !important;
+
+    transition: all 0.2s ease;
+}
+
+.villa-thumbnails img:hover {
+    opacity: 1;
+
+    transform: translateY(-3px);
+}
+
+.villa-thumbnails img.active {
+    opacity: 1;
+
+    border: 3px solid #10233f !important;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .villa-gallery {
+        width: 94vw !important;
+        max-width: none !important;
+    }
+
+    .villa-main > img {
+        height: 350px !important;
+    }
+
+    .villa-thumbnails {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    .villa-thumbnails img {
+        height: 80px !important;
+    }
+
+    .villa-arrow {
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 22px !important;
+    }
+}
+
+/* =========================================
+   FINAL PROJECT CARDS
+   ========================================= */
+
+.article-link--card {
+    height: 430px !important;
+    min-height: 0 !important;
+}
+
+/* Zona e fotos */
+.article-link--card .thumbnail_card {
+    width: 100% !important;
+    height: 280px !important;
+    min-height: 280px !important;
+    aspect-ratio: auto !important;
+
+    background: white !important;
+    overflow: hidden !important;
+}
+
+/* Fotot */
+.article-link--card .thumbnail_card img {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+
+    display: block !important;
+}
+
+/* Mos i zmadho me hover */
+.article-link--card:hover .thumbnail_card img {
+    transform: none !important;
+}
+
+/* FOTO BRENDA KARTAVE */
+
+.article-link--card .thumbnail_card {
+    width: 100% !important;
+    height: 300px !important;
+    min-height: 300px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: #ffffff !important;
+    overflow: hidden !important;
+}
+
+.article-link--card .thumbnail_card img {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: contain !important;
+    object-position: center center !important;
+
+    margin: 0 !important;
+    padding: 12px !important;
+
+    display: block !important;
+}
+
+.about-profile {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+
+    margin: 20px auto 55px auto !important;
+    padding-right: 70px !important;
+}
+
+.about-profile img {
+    width: 260px !important;
+    height: 260px !important;
+
+    object-fit: cover !important;
+    object-position: center !important;
+
+    border-radius: 50% !important;
+    border: 5px solid #c9953c !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    box-shadow: 0 8px 25px rgba(16, 35, 63, 0.10);
+}
+
+
+/* =========================================
+   PROJECT CARDS - COMPACT & ELEGANT
+   ========================================= */
+
+.article-link--card {
+    height: 350px !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+}
+
+/* Zona e fotos */
+.article-link--card .thumbnail_card {
+    height: 225px !important;
+    min-height: 225px !important;
+    padding: 0 !important;
+}
+
+/* Foto */
+.article-link--card .thumbnail_card img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    padding: 10px !important;
+}
+
+/* Titulli */
+.article-link--card h2 {
+    font-size: 1.28rem !important;
+    line-height: 1.25 !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.01em;
+}
+
+/* Data / reading time */
+.article-link--card .text-sm {
+    font-size: 0.88rem !important;
+    line-height: 1.4 !important;
+}
+
+/* Hapësira ndërmjet kartave */
+section.grid {
+    gap: 28px !important;
+}
+
+/* =========================================
+   DEVLOG WEEK PAGES - SMALLER TEXT
+   ========================================= */
+
+/* Teksti normal */
+.prose p,
+.prose li {
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+}
+
+/* Titulli kryesor i faqes */
+.prose h1 {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+}
+
+/* Titujt e seksioneve */
+.prose h2 {
+    font-size: 1.45rem !important;
+    line-height: 1.3 !important;
+    margin-top: 28px !important;
+    margin-bottom: 12px !important;
+}
+
+/* Nëntitujt */
+.prose h3 {
+    font-size: 1.2rem !important;
+    line-height: 1.35 !important;
+}
+
+/* Listat */
+.prose ul,
+.prose ol {
+    font-size: 16px !important;
+}
+
+/* Links brenda tekstit */
+.prose a {
+    font-size: inherit !important;
+}
+
+
+/* =========================================
+   DEVLOG WEEK PAGES ONLY
+   Titulli + metadata + teksti në një container
+   ========================================= */
+
+article:has(.prose a[href*="report"]) {
+    max-width: 900px !important;
+    margin: 45px auto 70px !important;
+
+    background: #FFFCF7 !important;
+    border: 1px solid #E2CFB3 !important;
+    border-radius: 18px !important;
+
+    padding: 40px 50px !important;
+
+    box-shadow: 0 8px 25px rgba(16, 42, 67, 0.06);
+}
+
+
+/* HEADER: Week 1 + data */
+article:has(.prose a[href*="report"]) > header {
+    transform: none !important;
+
+    margin: 0 0 30px 0 !important;
+    padding: 0 0 25px 0 !important;
+
+    border-bottom: 1px solid #D8B36A;
+}
+
+
+/* Titulli Week 1 / Week 2 */
+article:has(.prose a[href*="report"]) > header h1 {
+    font-size: 2.2rem !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+
+    margin: 0 0 12px 0 !important;
+}
+
+
+/* Heqim kutinë e dytë nga teksti */
+article:has(.prose a[href*="report"]) .prose {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+
+/* Teksti */
+article:has(.prose a[href*="report"]) .prose p,
+article:has(.prose a[href*="report"]) .prose li {
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+}
+
+
+/* What I worked on / Project Report */
+article:has(.prose a[href*="report"]) .prose h2 {
+    font-size: 1.45rem !important;
+    margin-top: 30px !important;
+    margin-bottom: 15px !important;
+}
+
+/* =========================================
+   TECHNOLOGIES PAGE ONLY
+   ========================================= */
+
+article:has(.prose img[src*="technology-stack"]) {
+    max-width: 1100px !important;
+    margin: 45px auto 70px !important;
+
+    background: #FFFCF7 !important;
+    border: 1px solid #E2CFB3 !important;
+    border-radius: 18px !important;
+
+    padding: 40px 50px !important;
+
+    box-shadow: 0 8px 25px rgba(16, 42, 67, 0.06);
+}
+
+/* Technologies + data */
+article:has(.prose img[src*="technology-stack"]) > header {
+    transform: none !important;
+    margin: 0 0 30px 0 !important;
+    padding: 0 0 25px 0 !important;
+
+    border-bottom: 1px solid #D8B36A !important;
+}
+
+/* Titulli Technologies */
+article:has(.prose img[src*="technology-stack"]) > header h1 {
+    font-size: 2.2rem !important;
+    line-height: 1.2 !important;
+    margin: 0 0 12px 0 !important;
+}
+
+/* Heq container-in e dytë */
+article:has(.prose img[src*="technology-stack"]) .prose {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+}

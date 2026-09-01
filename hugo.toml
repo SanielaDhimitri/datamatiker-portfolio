@@ -1,0 +1,12 @@
+baseURL = 'https://sanieladhimitri.github.io/portfolio-fall-2026/'
+relativeURLs = false
+canonifyURLs = false
+
+locale = 'en-us'
+title = 'Datamatiker Portfolio'
+theme = "blowfish"
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true

@@ -1,0 +1,8 @@
+[[main]]
+name = "About Me"
+pageRef = "about"
+identifier ="dyete6"
+weight = 10
+
+[[footer]]
+none = "none"

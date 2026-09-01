@@ -1,0 +1,19 @@
+colorScheme = "blowfish"
+
+mainSections = ["projects"]
+
+[homepage]
+layout = "profile"
+showRecent = true
+showRecentItems = 3
+showMoreLink = true
+showMoreLinkDest = "/projects/"
+cardView = true
+
+[list]
+cardView = true
+cardViewScreenWidth = false
+
+[article]
+showAuthor = false
+showPagination = true

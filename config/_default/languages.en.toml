@@ -1,0 +1,20 @@
+languageCode = "en"
+languageName = "English"
+weight = 1
+
+[params]
+displayName = "EN"
+isoCode = "en"
+rtl = false
+dateFormat = "2 January 2006"
+
+[params.author]
+name = "Saniela Dhimitri"
+headline = "Datamatiker Student"
+image = "img/img.png"
+
+links = [
+    { github = "https://github.com/SanielaDhimitri" },
+    { linkedin = "https://www.linkedin.com/in/saniela-dhimitri-2a461123a" },
+    { email = "mailto:sadh1000@stud.ek.dk" }
+]

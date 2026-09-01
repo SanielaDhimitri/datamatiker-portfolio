@@ -1,0 +1,256 @@
+<div class="villa-gallery">
+
+    <div class="villa-main">
+
+        <img id="villaImage"
+             src='{{ "images/villa1.png" | relURL }}'
+             alt="Villa Room Booking">
+
+        <button class="villa-arrow villa-prev" onclick="changeVilla(-1)">
+            ❮
+        </button>
+
+        <button class="villa-arrow villa-next" onclick="changeVilla(1)">
+            ❯
+        </button>
+
+        <div id="villaCounter" class="villa-counter">
+            1 / 7
+        </div>
+
+    </div>
+
+    <div class="villa-thumbnails">
+
+        <img src='{{ "images/villa1.png" | relURL }}'
+             onclick="selectVilla(0)" class="active"
+             alt="Villa 1">
+
+        <img src='{{ "images/villa2.png" | relURL }}'
+             onclick="selectVilla(1)"
+             alt="Villa 2">
+
+        <img src='{{ "images/villa3.png" | relURL }}'
+             onclick="selectVilla(2)"
+             alt="Villa 3">
+
+        <img src='{{ "images/villa4.png" | relURL }}'
+             onclick="selectVilla(3)"
+             alt="Villa 4">
+
+        <img src='{{ "images/villa5.png" | relURL }}'
+             onclick="selectVilla(4)"
+             alt="Villa 5">
+
+        <img src='{{ "images/villa6.png" | relURL }}'
+             onclick="selectVilla(5)"
+             alt="Villa 6">
+
+        <img src='{{ "images/villa7.png" | relURL }}'
+             onclick="selectVilla(6)"
+             alt="Villa 7">
+
+
+    </div>
+
+</div>
+
+
+<script>
+
+    const villaImages = [
+        '{{ "images/villa1.png" | relURL }}',
+        '{{ "images/villa2.png" | relURL }}',
+        '{{ "images/villa3.png" | relURL }}',
+        '{{ "images/villa4.png" | relURL }}',
+        '{{ "images/villa5.png" | relURL }}',
+        '{{ "images/villa6.png" | relURL }}',
+        '{{ "images/villa7.png" | relURL }}'
+    ];
+
+    let villaIndex = 0;
+
+    function updateVilla() {
+
+        document.getElementById("villaImage").src =
+            villaImages[villaIndex];
+
+        document.getElementById("villaCounter").innerText =
+            (villaIndex + 1) + " / " + villaImages.length;
+
+        const thumbnails =
+            document.querySelectorAll(".villa-thumbnails img");
+
+        thumbnails.forEach((img, index) => {
+            img.classList.toggle("active", index === villaIndex);
+        });
+    }
+
+    function changeVilla(direction) {
+
+        villaIndex = villaIndex + direction;
+
+        if (villaIndex >= villaImages.length) {
+            villaIndex = 0;
+        }
+
+        if (villaIndex < 0) {
+            villaIndex = villaImages.length - 1;
+        }
+
+        updateVilla();
+    }
+
+    function selectVilla(index) {
+
+        villaIndex = index;
+
+        updateVilla();
+    }
+
+</script>
+
+
+<style>
+
+    /* GALERIA */
+    .villa-gallery {
+        width: 900px;
+        max-width: 90vw;
+        margin: 40px auto;
+
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* FOTO KRYESORE */
+    .villa-main {
+        position: relative;
+        width: 100%;
+    }
+
+    .villa-main > img {
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+        display: block;
+        border-radius: 18px;
+    }
+
+    /* SHIGJETAT */
+    .villa-arrow {
+        position: absolute !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+
+        width: 48px !important;
+        height: 48px !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        border: none !important;
+        border-radius: 50% !important;
+
+        background: rgba(255, 255, 255, 0.92) !important;
+        color: #10233f !important;
+
+        font-size: 24px !important;
+        line-height: 1 !important;
+
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    .villa-prev {
+        left: 18px !important;
+    }
+
+    .villa-next {
+        right: 18px !important;
+    }
+
+    /* NUMRI 1 / 7 */
+    .villa-counter {
+        position: absolute;
+
+        bottom: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        background: rgba(0, 0, 0, 0.65);
+        color: white;
+
+        padding: 6px 16px;
+        border-radius: 20px;
+
+        font-size: 16px;
+    }
+
+    /* FOTOT E VOGLA */
+    .villa-thumbnails {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+
+        gap: 12px;
+        margin-top: 18px;
+    }
+
+    .villa-thumbnails img {
+        width: 100%;
+        height: 100px;
+
+        object-fit: cover;
+
+        border-radius: 9px;
+        cursor: pointer;
+
+        opacity: 0.75;
+        border: 2px solid transparent;
+
+        transition: 0.2s ease;
+    }
+
+    .villa-thumbnails img:hover {
+        opacity: 1;
+        transform: translateY(-2px);
+    }
+
+    .villa-thumbnails img.active {
+        opacity: 1;
+        border: 2px solid #10233f;
+    }
+
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+
+        .villa-gallery {
+            width: 94vw;
+        }
+
+        .villa-main > img {
+            height: 350px;
+        }
+
+        .villa-thumbnails {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .villa-thumbnails img {
+            height: 80px;
+        }
+
+        .villa-arrow {
+            width: 42px !important;
+            height: 42px !important;
+            font-size: 21px !important;
+        }
+    }
+
+</style>
