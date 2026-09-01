@@ -16,4 +16,4 @@ cardViewScreenWidth = false
 
 [article]
 showAuthor = false
-showPagination = true
+showPagination = false
