@@ -4,7 +4,7 @@ date = "2026-08-31"
 draft = false
 +++
 
-![Plan and Estimate](/images/project2.png)
+![Plan and Estimate](feature.png)
 
 ## Project Description
 

@@ -12,7 +12,7 @@ These technologies help keep the application structured, maintainable and connec
 
 ## Technology Stack
 
-![Technology Stack](/images/technology-stack.png)
+![Technology Stack](/datamatiker-portfolio/images/technology-stack.png)
 
 The project uses a combination of **Java, JPA/Hibernate, PostgreSQL, Maven and Git/GitHub**.
 
@@ -48,9 +48,11 @@ The `pom.xml` file contains the libraries and dependencies required by the appli
 
 **GitHub** is used to store the project repository and keep track of changes to the source code.
 
+
 ## System Architecture
 
-![System Architecture](/images/system-architecture.png)
+![System Architecture](/datamatiker-portfolio/images/system-architecture.png)
+
 
 The application is organized into different layers so that each part of the system has a clear responsibility.
 

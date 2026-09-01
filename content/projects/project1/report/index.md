@@ -6,17 +6,17 @@ draft = false
 ![Project Report](img/report.png)
 # Villa Room Booking System
 
-**Webapplikation til online booking af vÃ¦relser**
+**Webapplikation til online booking af værelser**
 
-**3. semesterprojekt â€“ Datamatiker**
+**3. semesterprojekt : Datamatiker**
 
 - **Studerende:** Saniela Dhimitri
 - **Uddannelse:** Datamatiker
 - **Semester:** 3. semester
-- **Uddannelsessted:** Erhvervsakademi KÃ¸benhavn (EK)
+- **Uddannelsessted:** Erhvervsakademi København (EK)
 - **Campus:** Lyngby
-- **Teknologier:** Java Â· Spring Boot Â· PostgreSQL
-- **StudieÃ¥r:** 2026â€“2027
+- **Teknologier:** Java · Spring Boot · PostgreSQL
+- **Studieår:** 2026–2027
 
 ---
 
@@ -27,7 +27,7 @@ draft = false
 3. Brugerhistorier (User Stories)
 4. Funktionelle krav
 5. Ikke-funktionelle krav
-6. DomÃ¦nemodel
+6. Domænemodel
 7. Klassediagram
 8. ER-diagram
 9. Sekvensdiagram
@@ -37,19 +37,19 @@ draft = false
 13. Konklusion
 
 ---
-## 1. Indledning
+## 1. IndledningAC
 
-Villa Room Booking System er en webapplikation, der udvikles til administration og online booking af vÃ¦relser i en mindre villa med otte vÃ¦relser.
+Villa Room Booking System er en webapplikation, der udvikles til administration og online booking af værelser i en mindre villa med otte værelser.
 
-FormÃ¥let med systemet er at gÃ¸re bookingprocessen enkel og overskuelig for bÃ¥de gÃ¦ster og administratoren.
+Formålet med systemet er at gøre bookingprocessen enkel og overskuelig for både gæster og administratoren.
 
-En gÃ¦st skal kunne vÃ¦lge check-in- og check-out-dato og derefter se, hvilke vÃ¦relser der er ledige i den Ã¸nskede periode. For hvert vÃ¦relse vises blandt andet billeder, stÃ¸rrelse i mÂ², pris pr. nat, kapacitet og faciliteter sÃ¥som Wi-Fi, TV, aircondition og eget badevÃ¦relse.
+En gæst skal kunne vælge check-in- og check-out-dato og derefter se, hvilke værelser der er ledige i den ønskede periode. For hvert værelse vises blandt andet billeder, størrelse i m², pris pr. nat, kapacitet og faciliteter såsom Wi-Fi, TV, aircondition og eget badeværelse.
 
-NÃ¥r gÃ¦sten har valgt et vÃ¦relse, skal vedkommende kunne indtaste sine personlige oplysninger, gennemfÃ¸re bookingen og betale for opholdet. Efter en gennemfÃ¸rt booking modtager gÃ¦sten en bekrÃ¦ftelse via e-mail eller SMS.
+Når gæsten har valgt et værelse, skal vedkommende kunne indtaste sine personlige oplysninger, gennemføre bookingen og betale for opholdet. Efter en gennemført booking modtager gæsten en bekræftelse via e-mail eller SMS.
 
-Systemet skal desuden give mulighed for at annullere en booking efter villaens gÃ¦ldende regler. Efter et afsluttet ophold kan gÃ¦sten skrive en anmeldelse og bedÃ¸mme blandt andet renlighed, komfort, beliggenhed, faciliteter og service.
+Systemet skal desuden give mulighed for at annullere en booking efter villaens gældende regler. Efter et afsluttet ophold kan gæsten skrive en anmeldelse og bedømme blandt andet renlighed, komfort, beliggenhed, faciliteter og service.
 
-Administratorens del af systemet skal gÃ¸re det muligt at administrere vÃ¦relser, priser, faciliteter, bookinger, betalinger og anmeldelser.
+Administratorens del af systemet skal gøre det muligt at administrere værelser, priser, faciliteter, bookinger, betalinger og anmeldelser.
 
 Applikationen udvikles i Java med Spring Boot og anvender PostgreSQL som relationel database.
 
@@ -57,13 +57,13 @@ Applikationen udvikles i Java med Spring Boot og anvender PostgreSQL som relatio
 
 ## 2. Problemformulering
 
-Mindre villaer kan hÃ¥ndtere reservationer manuelt via telefon, SMS eller e-mail. Det kan gÃ¸re det vanskeligt at bevare et samlet overblik over ledige vÃ¦relser, bookinger, betalinger og aflysninger. Det kan samtidig Ã¸ge risikoen for fejl og dobbeltbookinger.
+Mindre villaer kan håndtere reservationer manuelt via telefon, SMS eller e-mail. Det kan gøre det vanskeligt at bevare et samlet overblik over ledige værelser, bookinger, betalinger og aflysninger. Det kan samtidig øge risikoen for fejl og dobbeltbookinger.
 
-Projektet tager derfor udgangspunkt i fÃ¸lgende problemformulering:
+Projektet tager derfor udgangspunkt i følgende problemformulering:
 
-> **Hvordan kan der udvikles en brugervenlig webapplikation, som gÃ¸r det muligt for gÃ¦ster at finde, booke, betale og administrere et ophold i en mindre villa, samtidig med at administratoren fÃ¥r et samlet overblik over vÃ¦relser, bookinger, betalinger og tilgÃ¦ngelighed?**
+> **Hvordan kan der udvikles en brugervenlig webapplikation, som gør det muligt for gæster at finde, booke, betale og administrere et ophold i en mindre villa, samtidig med at administratoren får et samlet overblik over værelser, bookinger, betalinger og tilgængelighed?**
 
-Systemet skal sikre, at det samme vÃ¦relse ikke kan bookes af flere gÃ¦ster i overlappende perioder.
+Systemet skal sikre, at det samme værelse ikke kan bookes af flere gæster i overlappende perioder.
 
 ---
 
@@ -71,71 +71,71 @@ Systemet skal sikre, at det samme vÃ¦relse ikke kan bookes af flere gÃ¦ster 
 
 Brugerhistorierne beskriver de vigtigste funktioner i Villa Room Booking System set fra brugerens perspektiv.
 
-### 3.1 Se ledige vÃ¦relser â€“ US1
+### 3.1 Se ledige værelser : US1
 
-**Som kunde vil jeg kunne se ledige vÃ¦relser, sÃ¥ jeg kan finde et vÃ¦relse, der passer til mit ophold.**
+**Som kunde vil jeg kunne se ledige værelser, så jeg kan finde et værelse, der passer til mit ophold.**
 
 **Acceptance Criteria:**
 
-- Systemet viser de 8 vÃ¦relser opdelt efter dato.
-- Ledige vÃ¦relser er tydeligt markeret.
-- Bookede vÃ¦relser fremgÃ¥r som optaget.
-- Kunden kan vÃ¦lge check-in- og check-out-dato.
-- Systemet viser kun vÃ¦relser, der er ledige i den valgte periode.
-- Systemet viser, hvor mange vÃ¦relser der er ledige.
+- Systemet viser de 8 værelser opdelt efter dato.
+- Ledige værelser er tydeligt markeret.
+- Bookede værelser fremgår som optaget.
+- Kunden kan vælge check-in- og check-out-dato.
+- Systemet viser kun værelser, der er ledige i den valgte periode.
+- Systemet viser, hvor mange værelser der er ledige.
 
 **Tasks:**
 
-- Implementere visning af ledige og optagede vÃ¦relser med filtrering efter check-in- og check-out-dato.
+- Implementere visning af ledige og optagede værelser med filtrering efter check-in- og check-out-dato.
 - Implementere kontrol af eksisterende bookinger i databasen.
 
 ---
 
-### 3.2 Se information om vÃ¦relse â€“ US2
+### 3.2 Se information om værelse : US2
 
-**Som kunde vil jeg kunne se information om et vÃ¦relse, sÃ¥ jeg kan vÃ¦lge det vÃ¦relse, der passer bedst til mine behov.**
+**Som kunde vil jeg kunne se information om et værelse, så jeg kan vælge det værelse, der passer bedst til mine behov.**
 
 **Acceptance Criteria:**
 
-- VÃ¦relsets nummer eller navn.
-- Billeder af vÃ¦relset.
-- StÃ¸rrelse i mÂ².
+- Værelsets nummer eller navn.
+- Billeder af værelset.
+- Størrelse i m².
 - Pris pr. nat.
-- Maksimalt antal gÃ¦ster.
-- Faciliteter sÃ¥som Wi-Fi, TV, aircondition, eget badevÃ¦relse og balkon.
-- VÃ¦relsets gennemsnitlige rating.
+- Maksimalt antal gæster.
+- Faciliteter såsom Wi-Fi, TV, aircondition, eget badeværelse og balkon.
+- Værelsets gennemsnitlige rating.
 
 **Tasks:**
 
-- Implementere en detaljeside for hvert vÃ¦relse med billeder, pris, stÃ¸rrelse, faciliteter og rating.
+- Implementere en detaljeside for hvert værelse med billeder, pris, størrelse, faciliteter og rating.
 
 ---
 
-### 3.3 Booke vÃ¦relse â€“ US3
+### 3.3 Booke værelse : US3
 
-**Som kunde vil jeg kunne booke et ledigt vÃ¦relse, sÃ¥ jeg kan reservere det til mit ophold.**
+**Som kunde vil jeg kunne booke et ledigt værelse, så jeg kan reservere det til mit ophold.**
 
 **Acceptance Criteria:**
 
-- Kunden kan vÃ¦lge et ledigt vÃ¦relse.
+- Kunden kan vælge et ledigt værelse.
 - Kunden kan angive check-in og check-out.
-- Kunden kan angive antal gÃ¦ster.
-- Bookingen kan kun gennemfÃ¸res, hvis vÃ¦relset er ledigt.
-- Det samme vÃ¦relse kan ikke dobbeltbookes i samme periode.
-- Systemet beregner automatisk antal nÃ¦tter.
+- Kunden kan angive antal gæster.
+- Bookingen kan kun gennemføres, hvis værelset er ledigt.
+- Det samme værelse kan ikke dobbeltbookes i samme periode.
+- Systemet beregner automatisk antal nætter.
 - Systemet beregner den samlede pris.
 
 **Tasks:**
 
 - Udvikle bookingfunktionalitet med validering af datoer og ledighed.
 - Implementere kontrol mod dobbeltbooking.
-- Implementere automatisk beregning af antal nÃ¦tter og samlet pris.
+- Implementere automatisk beregning af antal nætter og samlet pris.
 
 ---
 
-### 3.4 Indtaste kundeoplysninger â€“ US4
+### 3.4 Indtaste kundeoplysninger : US4
 
-**Som kunde vil jeg kunne indtaste mine personlige oplysninger, sÃ¥ bookingen kan registreres i mit navn.**
+**Som kunde vil jeg kunne indtaste mine personlige oplysninger, så bookingen kan registreres i mit navn.**
 
 **Acceptance Criteria:**
 
@@ -143,8 +143,8 @@ Brugerhistorierne beskriver de vigtigste funktioner i Villa Room Booking System 
 - Efternavn.
 - E-mail.
 - Telefonnummer.
-- Antal gÃ¦ster.
-- Systemet validerer de nÃ¸dvendige oplysninger.
+- Antal gæster.
+- Systemet validerer de nødvendige oplysninger.
 
 **Tasks:**
 
@@ -154,17 +154,17 @@ Brugerhistorierne beskriver de vigtigste funktioner i Villa Room Booking System 
 
 ---
 
-### 3.5 Betale booking â€“ US5
+### 3.5 Betale booking : US5
 
-**Som kunde vil jeg kunne betale for mit ophold online, sÃ¥ min booking kan bekrÃ¦ftes.**
+**Som kunde vil jeg kunne betale for mit ophold online, så min booking kan bekræftes.**
 
 **Acceptance Criteria:**
 
-- Kunden kan se den samlede pris fÃ¸r betaling.
-- Kunden kan gennemfÃ¸re betalingen.
+- Kunden kan se den samlede pris før betaling.
+- Kunden kan gennemføre betalingen.
 - Betalingens status registreres.
-- Status kan vÃ¦re `PENDING`, `PAID`, `FAILED` eller `REFUNDED`.
-- Bookingen bekrÃ¦ftes efter en godkendt betaling.
+- Status kan være `PENDING`, `PAID`, `FAILED` eller `REFUNDED`.
+- Bookingen bekræftes efter en godkendt betaling.
 
 **Tasks:**
 
@@ -174,20 +174,20 @@ Brugerhistorierne beskriver de vigtigste funktioner i Villa Room Booking System 
 
 ---
 
-### 3.6 Modtage bookingbekrÃ¦ftelse â€“ US6
+### 3.6 Modtage bookingbekræftelse : US6
 
-**Som kunde vil jeg modtage en bookingbekrÃ¦ftelse via e-mail eller SMS, sÃ¥ jeg har dokumentation for min reservation.**
+**Som kunde vil jeg modtage en bookingbekræftelse via e-mail eller SMS, så jeg har dokumentation for min reservation.**
 
 **Acceptance Criteria:**
 
-BekrÃ¦ftelsen indeholder:
+Bekræftelsen indeholder:
 
 - Et unikt bookingnummer.
 - Kundens navn.
-- VÃ¦relsesnummer.
+- Værelsesnummer.
 - Check-in dato og tidspunkt.
 - Check-out dato og tidspunkt.
-- Antal nÃ¦tter.
+- Antal nætter.
 - Samlet pris.
 - Betalingsstatus.
 - Villaens adresse.
@@ -195,43 +195,43 @@ BekrÃ¦ftelsen indeholder:
 **Tasks:**
 
 - Generere et unikt bookingnummer.
-- Implementere bookingbekrÃ¦ftelse.
+- Implementere bookingbekræftelse.
 - Implementere afsendelse via e-mail og/eller SMS.
 
 ---
 
-### 3.7 Annullere booking â€“ US7
+### 3.7 Annullere booking – US7
 
-**Som kunde vil jeg kunne annullere min booking, sÃ¥ jeg kan afbestille mit ophold, hvis mine planer Ã¦ndrer sig.**
+**Som kunde vil jeg kunne annullere min booking, så jeg kan afbestille mit ophold, hvis mine planer ændrer sig.**
 
 **Acceptance Criteria:**
 
-- Kunden kan vÃ¦lge at annullere via sin bookingbekrÃ¦ftelse.
-- Bookingen kan annulleres indtil 2 timer fÃ¸r check-in.
+- Kunden kan vælge at annullere via sin bookingbekræftelse.
+- Bookingen kan annulleres indtil 2 timer før check-in.
 - Systemet afviser annulleringen, hvis der er mindre end 2 timer til check-in.
-- Bookingens status Ã¦ndres til `CANCELLED`.
-- VÃ¦relset bliver igen tilgÃ¦ngeligt for andre kunder.
+- Bookingens status ændres til `CANCELLED`.
+- Værelset bliver igen tilgængeligt for andre kunder.
 
 **Tasks:**
 
 - Implementere annulleringsfunktion.
 - Implementere 2-timers-reglen.
-- Opdatere bookingstatus og vÃ¦relsets tilgÃ¦ngelighed.
+- Opdatere bookingstatus og værelsets tilgængelighed.
 
 ---
 
-### 3.8 Se min booking â€“ US8
+### 3.8 Se min booking – US8
 
-**Som kunde vil jeg kunne se min booking, sÃ¥ jeg kan kontrollere oplysningerne om mit ophold.**
+**Som kunde vil jeg kunne se min booking, så jeg kan kontrollere oplysningerne om mit ophold.**
 
 **Acceptance Criteria:**
 
 Kunden kan se:
 
 - Bookingnummer.
-- VÃ¦relse.
+- Værelse.
 - Check-in og check-out.
-- Antal nÃ¦tter.
+- Antal nætter.
 - Samlet pris.
 - Bookingstatus.
 - Betalingsstatus.
@@ -242,63 +242,63 @@ Kunden kan se:
 
 ---
 
-### 3.9 Skrive anmeldelse â€“ US9
+### 3.9 Skrive anmeldelse – US9
 
-**Som kunde vil jeg kunne skrive en anmeldelse efter mit ophold, sÃ¥ jeg kan dele min oplevelse med andre gÃ¦ster.**
+**Som kunde vil jeg kunne skrive en anmeldelse efter mit ophold, så jeg kan dele min oplevelse med andre gæster.**
 
 **Acceptance Criteria:**
 
 - Kun kunder med et afsluttet ophold kan skrive en anmeldelse.
-- Kunden kan give 1â€“5 stjerner.
-- Kunden kan bedÃ¸mme renlighed.
-- Kunden kan bedÃ¸mme komfort.
-- Kunden kan bedÃ¸mme beliggenhed.
-- Kunden kan bedÃ¸mme faciliteter.
-- Kunden kan bedÃ¸mme value for money.
+- Kunden kan give 1–5 stjerner.
+- Kunden kan bedømme renlighed.
+- Kunden kan bedømme komfort.
+- Kunden kan bedømme beliggenhed.
+- Kunden kan bedømme faciliteter.
+- Kunden kan bedømme value for money.
 - Kunden kan skrive en kommentar.
 - Systemet beregner den gennemsnitlige rating.
 
 **Tasks:**
 
 - Implementere reviewformular.
-- Kontrollere, at kunden har gennemfÃ¸rt opholdet.
+- Kontrollere, at kunden har gennemført opholdet.
 - Gemme ratings og kommentar.
 - Beregne og vise gennemsnitlig rating.
 
 ---
 
-### 3.10 Administrere vÃ¦relser â€“ US10
+### 3.10 Administrere værelser – US10
 
-**Som admin vil jeg kunne administrere villaens vÃ¦relser, sÃ¥ informationen pÃ¥ hjemmesiden altid er opdateret.**
+**Som admin vil jeg kunne administrere villaens værelser, så informationen på hjemmesiden altid er opdateret.**
 
 **Acceptance Criteria:**
 
 Admin kan:
 
-- Se alle 8 vÃ¦relser.
-- Oprette og redigere et vÃ¦relse.
-- Ã†ndre pris pr. nat.
-- Ã†ndre stÃ¸rrelse og kapacitet.
-- TilfÃ¸je eller Ã¦ndre billeder.
-- Ã†ndre faciliteter sÃ¥som Wi-Fi, TV og aircondition.
+- Se alle 8 værelser.
+- Oprette og redigere et værelse.
+- Ændre pris pr. nat.
+- Ændre størrelse og kapacitet.
+- Tilføje eller ændre billeder.
+- Ændre faciliteter såsom Wi-Fi, TV og aircondition.
 
 **Tasks:**
 
-- Udvikle CRUD-funktionalitet til administration af vÃ¦relser.
+- Udvikle CRUD-funktionalitet til administration af værelser.
 
 ---
 
-### 3.11 Administrere bookinger â€“ US11
+### 3.11 Administrere bookinger – US11
 
-**Som admin vil jeg kunne se og administrere bookinger, sÃ¥ jeg har overblik over villaens reservationer.**
+**Som admin vil jeg kunne se og administrere bookinger, så jeg har overblik over villaens reservationer.**
 
 **Acceptance Criteria:**
 
 Admin kan:
 
 - Se alle bookinger.
-- Se ledige og optagede vÃ¦relser.
-- SÃ¸ge efter en booking.
+- Se ledige og optagede værelser.
+- Søge efter en booking.
 - Se bookinger efter dato.
 - Se kommende check-ins og check-outs.
 - Se bookingstatus.
@@ -306,101 +306,101 @@ Admin kan:
 
 **Tasks:**
 
-- Udvikle administrationsside til bookinger med sÃ¸gning, filtrering og Ã¦ndring af status.
+- Udvikle administrationsside til bookinger med søgning, filtrering og ændring af status.
 
 ---
 
-### 3.12 Se Admin Dashboard â€“ US12
+### 3.12 Se Admin Dashboard – US12
 
-**Som admin vil jeg kunne se et dashboard, sÃ¥ jeg hurtigt kan fÃ¥ overblik over villaens aktuelle situation.**
+**Som admin vil jeg kunne se et dashboard, så jeg hurtigt kan få overblik over villaens aktuelle situation.**
 
 **Acceptance Criteria:**
 
 Dashboardet viser:
 
-- Antal vÃ¦relser: 8.
-- Antal ledige vÃ¦relser.
-- Antal optagede vÃ¦relser.
+- Antal værelser: 8.
+- Antal ledige værelser.
+- Antal optagede værelser.
 - Dagens ankomster.
 - Dagens afgange.
 - Kommende bookinger.
-- Betalinger og omsÃ¦tning.
+- Betalinger og omsætning.
 
 **Tasks:**
 
-- Udvikle admin dashboard og hente de nÃ¸dvendige data fra databasen.
+- Udvikle admin dashboard og hente de nødvendige data fra databasen.
 
 
 ---
 
 ## 4. Funktionelle krav
 
-De funktionelle krav beskriver, hvilke funktioner Villa Room Booking System skal kunne udfÃ¸re.
+De funktionelle krav beskriver, hvilke funktioner Villa Room Booking System skal kunne udføre.
 
 **Systemet skal kunne:**
 
 - Vise information om villaen og dens kontaktoplysninger.
-- Vise villaens vÃ¦relser.
-- Give gÃ¦sten mulighed for at sÃ¸ge efter ledige vÃ¦relser ud fra check-in- og check-out-dato.
-- Vise vÃ¦relsets nummer, billeder, stÃ¸rrelse, kapacitet, pris og faciliteter.
-- Vise hvor mange vÃ¦relser der er ledige i den valgte periode.
+- Vise villaens værelser.
+- Give gæsten mulighed for at søge efter ledige værelser ud fra check-in- og check-out-dato.
+- Vise værelsets nummer, billeder, størrelse, kapacitet, pris og faciliteter.
+- Vise hvor mange værelser der er ledige i den valgte periode.
 - Forhindre dobbeltbookinger.
 - Beregne antal overnatninger og den samlede pris automatisk.
-- Registrere gÃ¦stens oplysninger.
+- Registrere gæstens oplysninger.
 - Oprette og gemme bookinger.
 - Registrere betaling og betalingsstatus.
 - Generere et unikt bookingnummer.
-- Sende bookingbekrÃ¦ftelse via e-mail eller SMS.
-- Give gÃ¦sten mulighed for at annullere bookingen indtil 2 timer fÃ¸r check-in.
-- Give gÃ¦sten mulighed for at skrive en anmeldelse og give 1â€“5 stjerner efter afsluttet ophold.
-- Give administratoren mulighed for at administrere vÃ¦relser, priser, faciliteter, bookinger, betalinger og anmeldelser.
+- Sende bookingbekræftelse via e-mail eller SMS.
+- Give gæsten mulighed for at annullere bookingen indtil 2 timer før check-in.
+- Give gæsten mulighed for at skrive en anmeldelse og give 1–5 stjerner efter afsluttet ophold.
+- Give administratoren mulighed for at administrere værelser, priser, faciliteter, bookinger, betalinger og anmeldelser.
 - Gemme relevante oplysninger i databasen.
 
 ---
 
 ## 5. Ikke-funktionelle krav
 
-Ud over de funktionelle krav stilles der ogsÃ¥ krav til systemets kvalitet, sikkerhed og brugervenlighed.
+Ud over de funktionelle krav stilles der også krav til systemets kvalitet, sikkerhed og brugervenlighed.
 
 ### Brugervenlighed
 
-BrugergrÃ¦nsefladen skal vÃ¦re enkel, overskuelig og nem at forstÃ¥ for bÃ¥de gÃ¦ster og administrator.
+Brugergrænsefladen skal være enkel, overskuelig og nem at forstå for både gæster og administrator.
 
 ### Responsivt design
 
-Webapplikationen skal kunne anvendes pÃ¥ computer, tablet og mobiltelefon.
+Webapplikationen skal kunne anvendes på computer, tablet og mobiltelefon.
 
 ### Sikkerhed
 
-Adgangskoder og kundeoplysninger skal hÃ¥ndteres sikkert.
+Adgangskoder og kundeoplysninger skal håndteres sikkert.
 
-Administratorfunktioner mÃ¥ kun vÃ¦re tilgÃ¦ngelige for administratoren.
+Administratorfunktioner må kun være tilgængelige for administratoren.
 
-### PÃ¥lidelighed
+### Pålidelighed
 
-Systemet skal forhindre dobbeltbookinger og sikre, at oplysninger om vÃ¦relser, bookinger og betalinger er korrekte.
+Systemet skal forhindre dobbeltbookinger og sikre, at oplysninger om værelser, bookinger og betalinger er korrekte.
 
 ### Vedligeholdelse
 
-Applikationen skal anvende en tydelig lagdelt arkitektur med Controller, Service og Repository, sÃ¥ koden er struktureret og nemmere at vedligeholde.
+Applikationen skal anvende en tydelig lagdelt arkitektur med Controller, Service og Repository, så koden er struktureret og nemmere at vedligeholde.
 
 ### Ydeevne
 
-SÃ¸gning efter ledige vÃ¦relser og gennemfÃ¸relse af bookinger skal ske inden for rimelig tid.
+Søgning efter ledige værelser og gennemførelse af bookinger skal ske inden for rimelig tid.
 
 ### Validering
 
-Brugerens input, sÃ¥som navn, e-mail, telefonnummer, datoer og antal gÃ¦ster, skal valideres, fÃ¸r oplysningerne gemmes.
+Brugerens input, såsom navn, e-mail, telefonnummer, datoer og antal gæster, skal valideres, før oplysningerne gemmes.
 
 ---
 
 
 
-## 6. DomÃ¦nemodel
+## 6. Domænemodel
 
-DomÃ¦nemodellen beskriver de vigtigste begreber i Villa Room Booking System og relationerne mellem dem.
+Domænemodellen beskriver de vigtigste begreber i Villa Room Booking System og relationerne mellem dem.
 
-De centrale domÃ¦neklasser er:
+De centrale domæneklasser er:
 
 - User
 - Role
@@ -412,17 +412,17 @@ De centrale domÃ¦neklasser er:
 - RoomImage
 - RoomAmenity
 
-En kunde kan have flere bookinger, mens hver booking tilhÃ¸rer Ã©n kunde. Et vÃ¦relse kan have flere bookinger pÃ¥ forskellige tidspunkter, men systemet skal sikre, at bookingerne ikke overlapper hinanden.
+En kunde kan have flere bookinger, mens hver booking tilhører én kunde. Et værelse kan have flere bookinger på forskellige tidspunkter, men systemet skal sikre, at bookingerne ikke overlapper hinanden.
 
-Et vÃ¦relse kan have flere faciliteter, sÃ¥som Wi-Fi, TV og aircondition, og den samme facilitet kan vÃ¦re tilknyttet flere vÃ¦relser. Derfor anvendes `RoomAmenity` som en join-klasse mellem `Room` og `Amenity`.
+Et værelse kan have flere faciliteter, såsom Wi-Fi, TV og aircondition, og den samme facilitet kan være tilknyttet flere værelser. Derfor anvendes `RoomAmenity` som en join-klasse mellem `Room` og `Amenity`.
 
-En booking er knyttet til et vÃ¦relse og en kunde og kan desuden vÃ¦re forbundet med en betaling og en anmeldelse.
+En booking er knyttet til et værelse og en kunde og kan desuden være forbundet med en betaling og en anmeldelse.
 
-### DomÃ¦nemodel
+### Domænemodel
 
-Herunder vises projektets domÃ¦nemodel:
+Herunder vises projektets domænemodel:
 
-![DomÃ¦nemodel](/images/domain-model.png)
+![Domænemodel](/datamatiker-portfolio/images/domain-model.png)
 
 ---
 
@@ -444,17 +444,17 @@ De vigtigste klasser er:
 
 Diagrammet viser klassernes vigtigste attributter samt relationerne mellem klasserne og deres kardinalitet, for eksempel one-to-many og many-to-many.
 
-`RoomAmenity` fungerer som en join-klasse mellem `Room` og `Amenity` og hÃ¥ndterer many-to-many-relationen mellem vÃ¦relser og faciliteter.
+`RoomAmenity` fungerer som en join-klasse mellem `Room` og `Amenity` og håndterer many-to-many-relationen mellem værelser og faciliteter.
 
-Java-klasserne mappes til tabeller i PostgreSQL-databasen ved hjÃ¦lp af JPA/Hibernate.
+Java-klasserne mappes til tabeller i PostgreSQL-databasen ved hjælp af JPA/Hibernate.
 
 ### Klassediagram 7a
 
-![Klassediagram 7a](/images/class-diagram-1.png)
+![Klassediagram 7a](/datamatiker-portfolio/images/class-diagram-1.png)
 
 ### Klassediagram 7b
 
-![Klassediagram 7b](/images/class-diagram-2.png)
+![Klassediagram 7b](/datamatiker-portfolio/images/class-diagram-2.png)
 
 
 ---
@@ -475,17 +475,17 @@ De vigtigste tabeller er:
 - room_images
 - room_amenities
 
-Hver tabel har en **Primary Key (PK)**, som identificerer hver rÃ¦kke entydigt.
+Hver tabel har en **Primary Key (PK)**, som identificerer hver række entydigt.
 
-**Foreign Keys (FK)** bruges til at skabe relationer mellem tabellerne. For eksempel er en booking knyttet til bÃ¥de en kunde og et vÃ¦relse.
+**Foreign Keys (FK)** bruges til at skabe relationer mellem tabellerne. For eksempel er en booking knyttet til både en kunde og et værelse.
 
-Tabellen `room_amenities` fungerer som en join-tabel mellem `rooms` og `amenities`. Dette gÃ¸r det muligt at implementere en many-to-many-relation, hvor et vÃ¦relse kan have flere faciliteter, og den samme facilitet kan vÃ¦re tilknyttet flere vÃ¦relser.
+Tabellen `room_amenities` fungerer som en join-tabel mellem `rooms` og `amenities`. Dette gør det muligt at implementere en many-to-many-relation, hvor et værelse kan have flere faciliteter, og den samme facilitet kan være tilknyttet flere værelser.
 
 ### ER-diagram
 
 Herunder vises projektets ER-diagram:
 
-![ER-diagram](/images/er-diagram.png)
+![ER-diagram](/datamatiker-portfolio/images/er-diagram.png)
 
 ---
 
@@ -493,34 +493,34 @@ Herunder vises projektets ER-diagram:
 
 Sekvensdiagrammet viser, hvordan de forskellige dele af systemet kommunikerer med hinanden under en booking.
 
-Diagrammet beskriver processen fra det tidspunkt, hvor kunden sÃ¸ger efter et ledigt vÃ¦relse, til bookingen bliver oprettet og bekrÃ¦ftet.
+Diagrammet beskriver processen fra det tidspunkt, hvor kunden søger efter et ledigt værelse, til bookingen bliver oprettet og bekræftet.
 
-Bookingprocessen foregÃ¥r overordnet sÃ¥ledes:
+Bookingprocessen foregår overordnet således:
 
-1. Kunden vÃ¦lger check-in- og check-out-dato.
-2. Systemet sÃ¸ger efter ledige vÃ¦relser.
-3. Kunden vÃ¦lger et vÃ¦relse.
+1. Kunden vælger check-in- og check-out-dato.
+2. Systemet søger efter ledige værelser.
+3. Kunden vælger et værelse.
 4. Kunden indtaster sine personlige oplysninger.
-5. Systemet kontrollerer, at vÃ¦relset stadig er ledigt.
+5. Systemet kontrollerer, at værelset stadig er ledigt.
 6. Bookingen oprettes.
 7. Betalingen registreres.
-8. Kunden modtager en bookingbekrÃ¦ftelse.
+8. Kunden modtager en bookingbekræftelse.
 
-Sekvensdiagrammet viser kommunikationen mellem blandt andet brugergrÃ¦nsefladen, Controller, Service, Repository og databasen.
+Sekvensdiagrammet viser kommunikationen mellem blandt andet brugergrænsefladen, Controller, Service, Repository og databasen.
 
 ### Sekvensdiagram
 
 Herunder vises projektets sekvensdiagram:
 
-![Sekvensdiagram](/images/sequence-diagram.png)
+![Sekvensdiagram](/datamatiker-portfolio/images/sequence-diagram.png)
 
 ---
 
 ## 10. Systemarkitektur
 
-Villa Room Booking System opbygges med en lagdelt arkitektur. FormÃ¥let er at adskille de forskellige ansvarsomrÃ¥der i applikationen, sÃ¥ systemet bliver mere overskueligt og lettere at vedligeholde.
+Villa Room Booking System opbygges med en lagdelt arkitektur. Formålet er at adskille de forskellige ansvarsområder i applikationen, så systemet bliver mere overskueligt og lettere at vedligeholde.
 
-Systemet bestÃ¥r af fÃ¸lgende lag:
+Systemet består af følgende lag:
 
 ### Controller
 
@@ -528,35 +528,35 @@ Controller-laget modtager HTTP-requests fra brugeren og sender dem videre til Se
 
 ### Service
 
-Service-laget indeholder systemets forretningslogik. Her hÃ¥ndteres blandt andet bookingregler, kontrol af ledige vÃ¦relser, prisberegning og validering.
+Service-laget indeholder systemets forretningslogik. Her håndteres blandt andet bookingregler, kontrol af ledige værelser, prisberegning og validering.
 
 ### Repository
 
-Repository-laget stÃ¥r for kommunikationen med databasen og bruges til at hente, gemme, opdatere og slette data.
+Repository-laget står for kommunikationen med databasen og bruges til at hente, gemme, opdatere og slette data.
 
 ### Database
 
-PostgreSQL anvendes som relationel database til at gemme blandt andet brugere, vÃ¦relser, bookinger, betalinger og anmeldelser.
+PostgreSQL anvendes som relationel database til at gemme blandt andet brugere, værelser, bookinger, betalinger og anmeldelser.
 
 Systemets overordnede struktur er:
 
-**Browser â†’ Controller â†’ Service â†’ Repository â†’ PostgreSQL**
+**Browser → Controller → Service → Repository → PostgreSQL**
 
 ### Systemarkitektur
 
 Herunder vises systemets arkitekturdiagram:
 
-![Systemarkitektur](/images/system-architecture.png)
+![Systemarkitektur](/datamatiker-portfolio/images/system-architecture.png)
 
 ---
 
 ## 11. Teknologier
 
-Villa Room Booking System udvikles med en rÃ¦kke teknologier til backend, database og versionsstyring.
+Villa Room Booking System udvikles med en række teknologier til backend, database og versionsstyring.
 
 ### Java
 
-Java anvendes som det primÃ¦re programmeringssprog til udvikling af applikationens backend og forretningslogik.
+Java anvendes som det primære programmeringssprog til udvikling af applikationens backend og forretningslogik.
 
 ### Spring Boot
 
@@ -564,11 +564,11 @@ Spring Boot anvendes til at opbygge webapplikationen og strukturere systemet i C
 
 ### JPA / Hibernate
 
-JPA og Hibernate anvendes til Object-Relational Mapping (ORM), sÃ¥ Java-objekter kan gemmes og hentes fra databasen.
+JPA og Hibernate anvendes til Object-Relational Mapping (ORM), så Java-objekter kan gemmes og hentes fra databasen.
 
 ### PostgreSQL
 
-PostgreSQL anvendes som relationel database til blandt andet brugere, vÃ¦relser, bookinger, betalinger og anmeldelser.
+PostgreSQL anvendes som relationel database til blandt andet brugere, værelser, bookinger, betalinger og anmeldelser.
 
 ### Maven
 
@@ -576,35 +576,35 @@ Maven anvendes til dependency management og til at administrere projektets bibli
 
 ### Git og GitHub
 
-Git anvendes til versionsstyring af projektet, mens GitHub bruges til at gemme projektets repository online og fÃ¸lge Ã¦ndringer i kildekoden.
+Git anvendes til versionsstyring af projektet, mens GitHub bruges til at gemme projektets repository online og følge ændringer i kildekoden.
 
 ### Docker
 
-Docker kan anvendes til at kÃ¸re PostgreSQL-databasen i et isoleret og ensartet udviklingsmiljÃ¸.
+Docker kan anvendes til at køre PostgreSQL-databasen i et isoleret og ensartet udviklingsmiljø.
 
 ### IntelliJ IDEA
 
-IntelliJ IDEA anvendes som udviklingsmiljÃ¸ til programmering, test og arbejde med projektets kode.
+IntelliJ IDEA anvendes som udviklingsmiljø til programmering, test og arbejde med projektets kode.
 
 ### Technology Stack
 
-Herunder vises en samlet oversigt over de teknologier og vÃ¦rktÃ¸jer, der anvendes i projektet:
+Herunder vises en samlet oversigt over de teknologier og værktøjer, der anvendes i projektet:
 
-![Villa Room Booking Technology Stack](/images/technology-stack.png)
+![Villa Room Booking Technology Stack](/datamatiker-portfolio/images/technology-stack.png)
 
 ---
 
 ## 12. Test
 
-Test er en vigtig del af udviklingen af Villa Room Booking System. FormÃ¥let er at kontrollere, at systemets funktioner virker korrekt, og at fejl opdages sÃ¥ tidligt som muligt.
+Test er en vigtig del af udviklingen af Villa Room Booking System. Formålet er at kontrollere, at systemets funktioner virker korrekt, og at fejl opdages så tidligt som muligt.
 
-I projektet anvendes bÃ¥de **Unit Tests** og **Integration Tests**.
+I projektet anvendes både **Unit Tests** og **Integration Tests**.
 
 ### Unit Tests
 
 Unit tests anvendes til at teste enkelte dele af applikationen isoleret.
 
-JUnit 5 anvendes til at skrive og kÃ¸re testene, mens Mockito kan anvendes til at mocke dependencies, sÃ¥ forretningslogikken kan testes uden at vÃ¦re afhÃ¦ngig af den rigtige database.
+JUnit 5 anvendes til at skrive og køre testene, mens Mockito kan anvendes til at mocke dependencies, så forretningslogikken kan testes uden at være afhængig af den rigtige database.
 
 Der kan blandt andet testes:
 
@@ -626,29 +626,29 @@ Der kan blandt andet testes:
 - Opdatering og sletning af data.
 - Repository- og databasefunktionalitet.
 - Oprettelse og hentning af bookinger.
-- Kontrol af ledige vÃ¦relser.
+- Kontrol af ledige værelser.
 - Relationer mellem systemets entities.
 
 Integration tests er vigtige, fordi de kontrollerer samspillet mellem applikationen og databasen og sikrer, at de forskellige dele af systemet fungerer korrekt sammen.
 
 ### Test af booking
 
-Et af de vigtigste testomrÃ¥der er bookingprocessen.
+Et af de vigtigste testområder er bookingprocessen.
 
-Systemet skal kontrollere, om der allerede eksisterer en booking for det valgte vÃ¦relse i den Ã¸nskede periode.
+Systemet skal kontrollere, om der allerede eksisterer en booking for det valgte værelse i den ønskede periode.
 
-Hvis perioderne overlapper hinanden, skal den nye booking afvises. Dette sikrer, at det samme vÃ¦relse ikke kan bookes af flere gÃ¦ster pÃ¥ samme tidspunkt.
+Hvis perioderne overlapper hinanden, skal den nye booking afvises. Dette sikrer, at det samme værelse ikke kan bookes af flere gæster på samme tidspunkt.
 
 
 ---
 
 ## 13. Konklusion
 
-Villa Room Booking System har til formÃ¥l at udvikle en brugervenlig og struktureret webapplikation til online booking af vÃ¦relser i en mindre villa.
+Villa Room Booking System har til formål at udvikle en brugervenlig og struktureret webapplikation til online booking af værelser i en mindre villa.
 
-Systemet giver gÃ¦ster mulighed for at sÃ¸ge efter ledige vÃ¦relser, se information om vÃ¦relserne, oprette en booking, betale for opholdet og modtage en bookingbekrÃ¦ftelse. Derudover kan gÃ¦ster administrere deres booking og skrive en anmeldelse efter afsluttet ophold.
+Systemet giver gæster mulighed for at søge efter ledige værelser, se information om værelserne, oprette en booking, betale for opholdet og modtage en bookingbekræftelse. Derudover kan gæster administrere deres booking og skrive en anmeldelse efter afsluttet ophold.
 
-For administratoren giver systemet mulighed for at administrere vÃ¦relser, bookinger, priser, faciliteter, betalinger og anmeldelser.
+For administratoren giver systemet mulighed for at administrere værelser, bookinger, priser, faciliteter, betalinger og anmeldelser.
 
 Projektet anvender en lagdelt arkitektur med Controller, Service og Repository samt PostgreSQL som relationel database. JPA/Hibernate anvendes til kommunikationen mellem Java-applikationen og databasen.
 
@@ -659,4 +659,4 @@ Projektet giver dermed praktisk erfaring med udvikling af en komplet webapplikat
 
 
 
-[← Back](/projects/project1/)
+[← Back](/datamatiker-portfolio/projects/project1/)

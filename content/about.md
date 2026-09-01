@@ -1,10 +1,9 @@
 +++
-
 date = "2026-08-25"
 +++
 
 <div class="about-profile">
-    <img src="/img.png" alt="Saniela Dhimitri">
+    <img src="/datamatiker-portfolio/img.png" alt="Saniela Dhimitri">
 </div>
 
 ## About Me

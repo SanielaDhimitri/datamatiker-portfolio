@@ -2,10 +2,9 @@
 title = "Markdown"
 date = "2026-08-31"
 draft = false
-featureimage = "/images/project3.png"
 +++
 
-![Markdown Project](/images/project3.png)
+![Markdown Project](feature.png)
 
 ## Project Description
 

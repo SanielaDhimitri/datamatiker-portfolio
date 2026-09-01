@@ -10,22 +10,22 @@ A web application for online room booking.
 
 <div style="display:flex; gap:10px; margin:25px 0; flex-wrap:wrap;">
 
-<a href="/projects/project1/devlog/"
+<a href="{{< relref "/projects/project1/devlog/" >}}"
 style="border:1px solid #7c3aed; border-radius:8px; padding:5px 12px; text-decoration:none;">
 DevLog
 </a>
 
-<a href="/projects/project1/report/"
+<a href="{{< relref "/projects/project1/report/" >}}"
 style="border:1px solid #7c3aed; border-radius:8px; padding:5px 12px; text-decoration:none;">
-Raport
+Report
 </a>
 
-<a href="/projects/project1/diagrams/"
+<a href="{{< relref "/projects/project1/diagrams/" >}}"
 style="border:1px solid #7c3aed; border-radius:8px; padding:5px 12px; text-decoration:none;">
 Diagrams
 </a>
 
-<a href="/projects/project1/technologies/"
+<a href="{{< relref "/projects/project1/technologies/" >}}"
 style="border:1px solid #7c3aed; border-radius:8px; padding:5px 12px; text-decoration:none;">
 Technologies
 </a>
