@@ -1,12 +1,12 @@
 +++
-title = "Week 3 â€“ Database Design"
+title = "Week 3 - Database Design"
 date = "2026-09-04"
 draft = false
 +++
 
-## Week 3 â€“ Database Design
+## Week 3 - Database Design
 
-This week I focused on designing the database for the **Maler & HÃ¥ndvÃ¦rk** web application.
+This week I focused on designing the database for the **Maler & Håndværk** web application.
 
 I started identifying the main entities needed to store information about customers, services and customer requests.
 

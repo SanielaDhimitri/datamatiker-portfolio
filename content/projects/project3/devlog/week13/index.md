@@ -1,12 +1,12 @@
 +++
-title = "Week 13 â€“ Testing and Improvements"
+title = "Week 13 - Testing and Improvements"
 date = "2026-09-04"
 draft = false
 +++
 
-## Week 13 â€“ Testing and Improvements
+## Week 13 - Testing and Improvements
 
-This week I focused on testing and improving the **Maler & HÃ¥ndvÃ¦rk** web application.
+This week I focused on testing and improving the **Maler & Håndværk** web application.
 
 The goal was to identify problems, fix errors and make sure the main features of the application work correctly.
 

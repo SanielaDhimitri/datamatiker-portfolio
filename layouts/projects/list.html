@@ -43,7 +43,7 @@
   </section>
 
   {{/* Article Grid */}}
-{{ if and (gt (len .Pages) 0) (ne .Title "Villa Room Booking") }}
+{{ if and (gt (len .Pages) 0) (ne .Title "Villa Room Booking") (not .Params.hideChildPages) }}
     {{ $cardView := .Params.cardView | default (site.Params.list.cardView | default false) }}
     {{ $cardViewScreenWidth := .Params.cardViewScreenWidth | default (site.Params.list.cardViewScreenWidth | default false) }}
     {{ $groupByYear := .Params.groupByYear | default (site.Params.list.groupByYear | default false) }}

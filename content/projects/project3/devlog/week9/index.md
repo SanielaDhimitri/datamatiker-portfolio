@@ -1,12 +1,12 @@
 +++
-title = "Week 9 â€“ Customer Service Requests"
+title = "Week 9 - Customer Service Requests"
 date = "2026-09-04"
 draft = false
 +++
 
-## Week 9 â€“ Customer Service Requests
+## Week 9 - Customer Service Requests
 
-This week I focused on how customers can create and manage service requests in the **Maler & HÃ¥ndvÃ¦rk** web application.
+This week I focused on how customers can create and manage service requests in the **Maler & Håndværk** web application.
 
 A customer can select a service and describe the work that needs to be done in their home.
 

@@ -1,12 +1,12 @@
 +++
-title = "Week 5 â€“ DAO and CRUD Operations"
+title = "Week 5 - DAO and CRUD Operations"
 date = "2026-09-04"
 draft = false
 +++
 
-## Week 5 â€“ DAO and CRUD Operations
+## Week 5 - DAO and CRUD Operations
 
-This week I focused on creating the DAO layer for the **Maler & HÃ¥ndvÃ¦rk** web application.
+This week I focused on creating the DAO layer for the **Maler & Håndværk** web application.
 
 The DAO layer is responsible for communicating with the database and managing the application data.
 

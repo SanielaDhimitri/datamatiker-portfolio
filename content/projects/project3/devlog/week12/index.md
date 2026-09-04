@@ -1,12 +1,12 @@
 +++
-title = "Week 12 â€“ Backend and Frontend Integration"
+title = "Week 12 - Backend and Frontend Integration"
 date = "2026-09-04"
 draft = false
 +++
 
-## Week 12 â€“ Backend and Frontend Integration
+## Week 12 - Backend and Frontend Integration
 
-This week I focused on connecting the frontend with the backend of the **Maler & HÃ¥ndvÃ¦rk** web application.
+This week I focused on connecting the frontend with the backend of the **Maler & Håndværk** web application.
 
 The goal was to allow the frontend to send and receive data through the REST API.
 

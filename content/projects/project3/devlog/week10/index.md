@@ -1,12 +1,12 @@
 +++
-title = "Week 10 â€“ Job Management"
+title = "Week 10 - Job Management"
 date = "2026-09-04"
 draft = false
 +++
 
-## Week 10 â€“ Job Management
+## Week 10 - Job Management
 
-This week I focused on managing jobs in the **Maler & HÃ¥ndvÃ¦rk** web application.
+This week I focused on managing jobs in the **Maler & Håndværk** web application.
 
 When a customer sends a service request, the company can review the request and assign the job to the appropriate craftsman.
 

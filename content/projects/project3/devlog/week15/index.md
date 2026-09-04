@@ -1,12 +1,12 @@
 +++
-title = "Week 15 â€“ Final Project and Documentation"
+title = "Week 15 - Final Project and Documentation"
 date = "2025-09-04"
 draft = false
 +++
 
-## Week 15 â€“ Final Project and Documentation
+## Week 15 - Final Project and Documentation
 
-This week I focused on completing the **Maler & HÃ¥ndvÃ¦rk** web application and preparing the final project documentation.
+This week I focused on completing the **Maler & Håndværk** web application and preparing the final project documentation.
 
 The goal was to make sure the project was complete, well structured and ready for presentation.
 

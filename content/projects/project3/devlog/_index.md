@@ -2,9 +2,10 @@
 title = "DevLog"
 date = "2026-01-04"
 draft = false
-
-
+showInRecent = false
+hideChildPages = true
 +++
+
 
 # Development Log – Maler & Håndværk
 

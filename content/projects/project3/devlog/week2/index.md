@@ -1,12 +1,12 @@
 +++
-title = "Week 2 â€“ Requirements and User Stories"
+title = "Week 2 - Requirements and User Stories"
 date = "2026-09-04"
 draft = false
 +++
 
-## Week 2 â€“ Requirements and User Stories
+## Week 2 - Requirements and User Stories
 
-This week I focused on defining the requirements for the **Maler & HÃ¥ndvÃ¦rk** web application.
+This week I focused on defining the requirements for the **Maler & Håndværk** web application.
 
 The goal was to understand what the customer should be able to do on the website and what functionality the application needs.
 
