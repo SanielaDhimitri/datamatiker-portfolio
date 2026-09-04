@@ -1,12 +1,12 @@
 +++
-title = "Week 8 – Services and Categories"
+title = "Week 8 â€“ Services and Categories"
 date = "2026-09-04"
 draft = false
 +++
 
-## Week 8 – Services and Categories
+## Week 8 â€“ Services and Categories
 
-This week I focused on creating and organizing the different services offered by the **Maler & Håndværk** web application.
+This week I focused on creating and organizing the different services offered by the **Maler & HÃ¥ndvÃ¦rk** web application.
 
 Painting is the main service, while the application also includes other home improvement and repair services.
 
@@ -15,7 +15,7 @@ Painting is the main service, while the application also includes other home imp
 - Malerarbejde
 - Elektrikerarbejde
 - VVS-arbejde
-- Tømrerarbejde
+- TÃ¸mrerarbejde
 - Murerarbejde
 - Reparationer i hjemmet
 
@@ -38,5 +38,6 @@ I worked on how services can be:
 
 ---
 
-[← Back to DevLog](../)
+[Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)
+
 

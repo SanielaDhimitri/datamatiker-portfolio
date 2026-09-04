@@ -1,12 +1,12 @@
 +++
-title = "Week 7 – User Authentication and Roles"
+title = "Week 7 â€“ User Authentication and Roles"
 date = "2026-09-04"
 draft = false
 +++
 
-## Week 7 – User Authentication and Roles
+## Week 7 â€“ User Authentication and Roles
 
-This week I focused on user authentication and roles for the **Maler & Håndværk** web application.
+This week I focused on user authentication and roles for the **Maler & HÃ¥ndvÃ¦rk** web application.
 
 The goal is to control who can access different parts of the application.
 
@@ -43,4 +43,4 @@ For example, customers can create service requests, craftsmen can manage assigne
 
 ---
 
-[← Back to DevLog](../)
+[Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)

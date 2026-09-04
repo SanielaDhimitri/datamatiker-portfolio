@@ -1,12 +1,12 @@
 +++
-title = "Week 12 – Backend and Frontend Integration"
+title = "Week 12 â€“ Backend and Frontend Integration"
 date = "2026-09-04"
 draft = false
 +++
 
-## Week 12 – Backend and Frontend Integration
+## Week 12 â€“ Backend and Frontend Integration
 
-This week I focused on connecting the frontend with the backend of the **Maler & Håndværk** web application.
+This week I focused on connecting the frontend with the backend of the **Maler & HÃ¥ndvÃ¦rk** web application.
 
 The goal was to allow the frontend to send and receive data through the REST API.
 
@@ -25,7 +25,7 @@ I worked on:
 
 The application follows this basic flow:
 
-Customer → Frontend → REST API → Service Layer → DAO → Database
+Customer â†’ Frontend â†’ REST API â†’ Service Layer â†’ DAO â†’ Database
 
 ### What I Learned
 
@@ -37,4 +37,4 @@ Customer → Frontend → REST API → Service Layer → DAO → Database
 
 ---
 
-[← Back to DevLog](../)
+[Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)

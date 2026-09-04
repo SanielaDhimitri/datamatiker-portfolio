@@ -1,12 +1,12 @@
 +++
-title = "Week 11 – Frontend Development"
+title = "Week 11 â€“ Frontend Development"
 date = "2026-09-04"
 draft = false
 +++
 
-## Week 11 – Frontend Development
+## Week 11 â€“ Frontend Development
 
-This week I focused on developing the frontend of the **Maler & Håndværk** web application.
+This week I focused on developing the frontend of the **Maler & HÃ¥ndvÃ¦rk** web application.
 
 The goal was to create a simple and user-friendly interface where customers can explore the services and request help.
 
@@ -46,4 +46,4 @@ I focused on:
 
 ---
 
-[← Back to DevLog](../)
+[Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)

@@ -1,12 +1,12 @@
 +++
-title = "Week 6 – Service Layer"
+title = "Week 6 â€“ Service Layer"
 date = "2026-09-04"
 draft = false
 +++
 
-## Week 6 – Service Layer
+## Week 6 â€“ Service Layer
 
-This week I focused on creating the service layer for the **Maler & Håndværk** web application.
+This week I focused on creating the service layer for the **Maler & HÃ¥ndvÃ¦rk** web application.
 
 The service layer contains the business logic of the application and connects the controllers with the DAO layer.
 
@@ -39,4 +39,4 @@ The service layer is responsible for:
 
 ---
 
-[← Back to DevLog](../)
+[Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)

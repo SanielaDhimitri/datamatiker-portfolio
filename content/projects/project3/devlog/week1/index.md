@@ -1,12 +1,12 @@
 +++
-title = "Week 1 – Project Idea and Planning"
+title = "Week 1 â€“ Project Idea and Planning"
 date = "2026-09-04"
 draft = false
 +++
 
-## Week 1 – Project Idea and Planning
+## Week 1 â€“ Project Idea and Planning
 
-This week I started planning my **Maler & Håndværk** web application.
+This week I started planning my **Maler & HÃ¥ndvÃ¦rk** web application.
 
 The idea is to create a web application for a company that primarily offers painting services, together with other home services such as electrical work, plumbing, carpentry, masonry and home repairs.
 
@@ -15,7 +15,7 @@ The idea is to create a web application for a company that primarily offers pain
 - Malerarbejde
 - Elektrikerarbejde
 - VVS-arbejde
-- Tømrerarbejde
+- TÃ¸mrerarbejde
 - Murerarbejde
 - Reparationer i hjemmet
 
@@ -28,4 +28,5 @@ The idea is to create a web application for a company that primarily offers pain
 
 ---
 
-[← Back to DevLog](../)
+[Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)
+

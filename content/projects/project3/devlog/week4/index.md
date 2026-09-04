@@ -1,12 +1,12 @@
 +++
-title = "Week 4 – Entities and Relationships"
+title = "Week 4 â€“ Entities and Relationships"
 date = "2026-09-04"
 draft = false
 +++
 
-## Week 4 – Entities and Relationships
+## Week 4 â€“ Entities and Relationships
 
-This week I started implementing the entities for the **Maler & Håndværk** web application using Java, JPA and Hibernate.
+This week I started implementing the entities for the **Maler & HÃ¥ndvÃ¦rk** web application using Java, JPA and Hibernate.
 
 The entities represent the main objects in the application and are mapped to tables in the database.
 
@@ -41,4 +41,5 @@ I also worked on defining the relationships between the entities.
 
 ---
 
-[← Back to DevLog](../)
+[Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)
+

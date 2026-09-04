@@ -1,12 +1,12 @@
 +++
-title = "Week 5 – DAO and CRUD Operations"
+title = "Week 5 â€“ DAO and CRUD Operations"
 date = "2026-09-04"
 draft = false
 +++
 
-## Week 5 – DAO and CRUD Operations
+## Week 5 â€“ DAO and CRUD Operations
 
-This week I focused on creating the DAO layer for the **Maler & Håndværk** web application.
+This week I focused on creating the DAO layer for the **Maler & HÃ¥ndvÃ¦rk** web application.
 
 The DAO layer is responsible for communicating with the database and managing the application data.
 
@@ -14,10 +14,10 @@ The DAO layer is responsible for communicating with the database and managing th
 
 I worked with the main CRUD operations:
 
-- Create – add new data
-- Read – retrieve data from the database
-- Update – modify existing data
-- Delete – remove data
+- Create â€“ add new data
+- Read â€“ retrieve data from the database
+- Update â€“ modify existing data
+- Delete â€“ remove data
 
 ### DAO Structure
 
@@ -39,4 +39,5 @@ I started creating DAO classes for the main entities, such as:
 
 ---
 
-[← Back to DevLog](../)
+[Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)
+
