@@ -1,64 +1,32 @@
 +++
-title = "Uge 40 – Concurrency og Threads"
+title = "Week 7 – User Authentication and Roles"
 draft = false
 
 [build]
 list = "never"
 +++
 
-I denne uge arbejdede jeg med **concurrency og threads** i projektet **Maler & Håndværk**.
+This week, I focused on **user authentication and roles** in the Villa Room Booking System.
 
-Jeg implementerede en tråd i Booking-funktionaliteten for at arbejde med, hvordan en opgave kan udføres i en separat tråd.
+I worked on how users can access the system and how different permissions can be given depending on the user's role.
 
-## BookingTask
+The goal was to separate the functionality available to **guests** from the functionality available to the **administrator**.
 
-Jeg lavede en ny klasse `BookingTask`, som implementerer `Runnable`.
+## What I worked on
 
-`Runnable` betyder, at `BookingTask` er en opgave, som en tråd kan udføre.
+- **Authentication** – Worked on the process for identifying users.
+- **User roles** – Defined different roles in the application.
+- **Guest access** – Defined the functionality available to guests.
+- **Administrator access** – Defined functionality available only to the administrator.
+- **Authorization** – Worked on controlling access based on the user's role.
+- **Security structure** – Organized the authentication and authorization logic.
 
-## BookingMenu
+## Project Report
 
-I `BookingMenu` opretter jeg en `BookingTask` og giver den til en ny `Thread`.
+More details about the project can be found in my Project Report:
 
-```java
-BookingTask task = new BookingTask(booking);
-Thread thread = new Thread(task);
-thread.start();
-```
-
-Processen kan beskrives sådan:
-
-`Booking → BookingTask → Thread → thread.start()`
-
-Når `thread.start()` kaldes, starter Java tråden og udfører `run()`-metoden i `BookingTask`.
-
-## Hvad jeg arbejdede med
-
-- `BookingTask`
-- `Runnable`
-- `Thread`
-- `thread.start()`
-- Concurrency i Booking-funktionaliteten
-
-## Resultat
-
-Jeg har fået praktisk erfaring med at oprette og starte en tråd i Java og bruge `Runnable` til at definere den opgave, som tråden skal udføre.
-
-
-## E-mailfunktionalitet
-
-Jeg arbejdede også med e-mailfunktionaliteten i projektet. Når en arbejdsforespørgsel oprettes, forsøger programmet at sende en e-mail.
-
-Under testen fik jeg fejlen `AuthenticationFailedException (535)`. Det betyder, at SMTP-serveren afviste loginoplysningerne. Jeg undersøgte derfor e-mailkonfigurationen og lærte, at afsenderkontoens oplysninger og SMTP-indstillinger skal være korrekte, før programmet kan sende e-mails.
-
-E-mailfunktionen er en separat del af projektet fra `BookingTask` og tråden.
-
-## Andre emner i uge 40
-
-I undervisningen arbejdede vi også med logging og API-dokumentation. Vi så blandt andet på Logback, exception mapping og validation i Javalin.
-
-Vi arbejdede også med dokumentationsformatet for 3. semester og lavede øvelser i timerne.
+**[View Project Report](../../report/)**
 
 ---
 
-[← Tilbage](/projects/project1/devlog/)
+[← Back](/projects/project1/devlog/)

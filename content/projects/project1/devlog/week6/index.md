@@ -1,67 +1,31 @@
 +++
-title = "Uge 39 – Geoapify API og Integration"
+title = "Week 6 – Service Layer and Business Logic"
 draft = false
 
 [build]
 list = "never"
 +++
 
-I denne uge arbejdede jeg med **API-integration** i projektet **Maler & Håndværk**.
+This week, I focused on the **service layer** and the **business logic** of the Villa Room Booking System.
 
-Jeg ville gøre det muligt for brugeren at søge efter og vælge en rigtig adresse, når der oprettes en `WorkRequest`.
+I worked on separating the business logic from the database layer so that the different parts of the application have clear responsibilities.
 
-Jeg arbejdede først med adresseintegration og endte med at bruge **Geoapify API**, som fungerer som den nuværende løsning i projektet.
+The service layer connects the application functionality with the DAO layer and helps organize the logic needed for the booking system.
 
-## Geoapify API
+## What I worked on
 
-Når brugeren indtaster en adresse, sender programmet en HTTP request til Geoapify.
+- **Service layer** – Started organizing the application's business logic.
+- **Business logic** – Defined rules and functionality needed by the system.
+- **DAO integration** – Connected the service layer with the DAO layer.
+- **Code structure** – Improved the separation of responsibilities in the application.
+- **Validation** – Worked on validating data before performing operations.
 
-Geoapify returnerer adressedata som **JSON**, som derefter behandles i Java.
+## Project Report
 
-Processen er:
+More details about the project can be found in my Project Report:
 
-`Geoapify → HTTP Request → JSON → Jackson → AdresseDTO → WorkRequestMenu`
+**[View Project Report](../../report/)**
 
-## Hvad jeg arbejdede med
+---
 
-Jeg arbejdede blandt andet med:
-
-- `GeoapifyApi`
-- `GeoapifyService`
-- `AdresseDTO`
-- `WorkRequestMenu`
-- HTTP requests
-- JSON
-- Jackson
-- Environment variables
-
-`GeoapifyApi` sender requests til Geoapify API.
-
-`GeoapifyService` behandler de JSON-data, som API'et returnerer, og Jackson bruges til at konvertere data til Java-objekter.
-
-De nødvendige adressedata gemmes i `AdresseDTO`.
-
-## Adresseforslag
-
-Når brugeren opretter en arbejdsforespørgsel, kan brugeren skrive en adresse.
-
-Programmet:
-
-1. Sender adressen til Geoapify.
-2. Modtager relevante adresser.
-3. Viser op til 5 adresseforslag.
-4. Lader brugeren vælge den korrekte adresse.
-5. Gemmer den valgte adresse i WorkRequest.
-
-## API Key
-
-Geoapify kræver en API key.
-
-For at undgå at gemme API-nøglen direkte i kildekoden, gemmer jeg den som en environment variable:
-
-`GEOAPIFY_API_KEY`
-
-I Java hentes den med:
-
-```java
-System.getenv("GEOAPIFY_API_KEY");
+[← Back](/projects/project1/devlog/)

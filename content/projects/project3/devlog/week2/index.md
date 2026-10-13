@@ -1,52 +1,37 @@
 +++
-title = "Uge 35 – Database Design og JPA"
+title = "Week 2 - Requirements and User Stories"
+date = "2026-09-04"
 draft = false
-
-[build]
-list = "never"
 +++
 
-I denne uge arbejdede jeg videre med **Maler & Håndværk** og begyndte at opbygge databasen til projektet.
+## Week 2 - Requirements and User Stories
 
-Jeg arbejdede med **PostgreSQL** som database og brugte **JPA/Hibernate** til at forbinde Java-programmet med databasen.
+This week I focused on defining the requirements for the **Maler & Håndværk** web application.
 
-Jeg begyndte at oprette de vigtigste **entities**, som repræsenterer data i systemet.
+The goal was to understand what the customer should be able to do on the website and what functionality the application needs.
 
-Jeg arbejdede blandt andet med:
+### Main Requirements
 
-- `Person`
-- `Bruger`
-- `Admin`
-- `Medarbejder`
-- `Service`
-- `Booking`
-- `WorkRequest`
+- View available services
+- Choose a type of service
+- Send a request for work
+- Provide contact information
+- Describe the job
+- View the status of a request
+- Leave a review after the work is completed
 
-Jeg begyndte også at arbejde med relationerne mellem de forskellige entities. For eksempel skal en booking kunne være forbundet med en bruger og en service.
+### User Stories
 
-## Hvad jeg arbejdede med
+- As a customer, I want to view the available services so I can find the right type of help.
+- As a customer, I want to describe my task so the company understands what work is needed.
+- As a customer, I want to send a service request so I can get help with my home.
+- As a customer, I want to see the status of my request.
 
-- **PostgreSQL** – Bruges som database til projektet.
-- **JPA/Hibernate** – Bruges til kommunikationen mellem Java og databasen.
-- **Entities** – Oprettede de første klasser, som repræsenterer data i databasen.
-- **Relationships** – Arbejdede med relationer mellem entities.
-- **Database Design** – Arbejdede videre med strukturen af databasen.
+### What I Learned
 
-## JPA
-
-Jeg brugte forskellige JPA-annotations, blandt andet:
-
-- `@Entity`
-- `@Id`
-- `@GeneratedValue`
-- `@ManyToOne`
-- `@OneToMany`
-
-JPA gør det muligt at arbejde med Java-objekter, mens Hibernate håndterer kommunikationen med databasen.
-
-## Projektets struktur
-
-I denne uge begyndte projektet at gå fra planlægning og diagrammer til en rigtig Java-applikation med database og entities.
+- How to define functional requirements
+- How to create user stories
+- How requirements help structure a software project
 
 ---
 

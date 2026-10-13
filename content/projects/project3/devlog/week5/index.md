@@ -1,59 +1,43 @@
 +++
-title = "Uge 38 – Funktionalitet og Tests"
+title = "Week 5 - DAO and CRUD Operations"
+date = "2026-09-04"
 draft = false
-
-[build]
-list = "never"
 +++
 
-I denne uge arbejdede jeg videre med funktionaliteten i **Maler & Håndværk**.
+## Week 5 - DAO and CRUD Operations
 
-Jeg fokuserede på at få de forskellige dele af programmet til at fungere sammen og testede kommunikationen mellem Java-programmet og databasen.
+This week I focused on creating the DAO layer for the **Maler & Håndværk** web application.
 
-## Funktionalitet
+The DAO layer is responsible for communicating with the database and managing the application data.
 
-Jeg arbejdede videre med flere af projektets centrale funktioner:
+### CRUD Operations
 
-- `Booking`
-- `WorkRequest`
-- `Offer`
-- `Person`
-- `Service`
+I worked with the main CRUD operations:
 
-Jeg arbejdede blandt andet med at oprette, hente og ændre data gennem Menu-, Service- og DAO-lagene.
+- Create â€“ add new data
+- Read â€“ retrieve data from the database
+- Update â€“ modify existing data
+- Delete â€“ remove data
 
-Jeg arbejdede også med **validation og error handling**, så programmet bedre kan håndtere ugyldige input og fejl.
+### DAO Structure
 
-## Tests
+I started creating DAO classes for the main entities, such as:
 
-Jeg lavede tests til mine DAO-klasser for at kontrollere, at kommunikationen med databasen fungerer korrekt.
+- CustomerDAO
+- CraftsmanDAO
+- ServiceDAO
+- ServiceRequestDAO
+- ReviewDAO
 
-Jeg testede blandt andet:
+### What I Learned
 
-- `BookingDAO`
-- `OfferDAO`
-- `PersonDAO`
-- `ServiceDAO`
-- `WorkRequestDAO`
-
-Testene bruges til at kontrollere, at data kan oprettes, hentes, opdateres og slettes korrekt i databasen.
-
-## Debugging
-
-Under arbejdet fandt jeg også forskellige fejl i programmet.
-
-Jeg brugte debugging og fejlmeddelelser til at finde årsagen til problemerne og rette dem.
-
-Det hjalp mig med at forstå bedre, hvordan de forskellige lag i programmet arbejder sammen.
-
-## Resultat
-
-Efter denne uge var flere af projektets centrale funktioner forbundet med databasen og testet.
-
-Projektets struktur var nu:
-
-`Menu → Service → DAO → JPA/Hibernate → PostgreSQL`
+- How the DAO pattern works
+- How to use `EntityManager`
+- How to save and retrieve entities
+- How to update and delete database records
+- How to separate database logic from the rest of the application
 
 ---
 
 [Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)
+

@@ -1,280 +1,863 @@
 +++
 title = "Project Report"
-date = 2026-10-13
+date = "2025-09-04"
 draft = false
+
 +++
-Maler & Håndværk
-REST API til håndværksydelser og arbejdsforespørgsler
-3. semesterprojekt – Datamatiker
-- Uddannelse: Datamatiker
-- Uddannelsessted: Erhvervsakademi København (EK), Lyngby
-- Teknologier: Java · Javalin · JPA/Hibernate · PostgreSQL · JWT · Gemini AI
-- Studieår: 2026–2027
 
-  Indhold
+# Maler & Håndværk
+
+**Webapplikation til håndværksydelser og reparationer i hjemmet**
+
+**3. semesterprojekt : Datamatiker**
+
+- **Studerende:** Saniela Dhimitri
+- **Uddannelse:** Datamatiker
+- **Semester:** 3. semester
+- **Uddannelsessted:** Erhvervsakademi København (EK)
+- **Campus:** Lyngby
+- **Teknologier:** Java · Spring Boot · JPA/Hibernate · PostgreSQL
+- **Studieår:** 2026–2027
+
+---
+
+### Indhold
+
 1. Indledning
 2. Problemformulering
-6. Domænemodel
-7. Klassediagram
-8. ER-diagram
-9. Sekvensdiagram
-10. Systemarkitektur
-11. Teknologier
-12. Test
-13. Konklusion
-
-1. Indledning
-   Maler & Håndværk er et backendprojekt til en håndværksvirksomhed med malerarbejde som primær ydelse. Systemet skal gøre det lettere at modtage og behandle arbejdsforespørgsler, administrere tilbud og håndtere forskellige services.
-   Besøgende skal kunne sende arbejdsforespørgsler uden login. Registrerede brugere kan logge ind med JWT, og rollerne ADMIN og MEDLEM bestemmer adgangen til beskyttede funktioner. Systemet indeholder desuden integration med AI-chat via Gemini.
-   Projektet udvikles som et REST API i Java og Javalin. JPA/Hibernate bruges til databaseadgang, og data gemmes i PostgreSQL. Frontend, bookingkalender, kundeportal og betaling er ikke dokumenteret som færdige dele af denne backendversion.
-2. Problemformulering
-   Håndværksvirksomheder kan modtage henvendelser via telefon, e-mail og sociale medier. Det kan gøre det svært at samle kundeoplysninger, følge arbejdsforespørgsler og udarbejde tilbud.
-   Hvordan kan et REST API udvikles, så kunder nemt kan sende arbejdsforespørgsler, mens virksomheden sikkert kan administrere forespørgsler, tilbud og services ved hjælp af rollebaseret adgang og AI-integration?
-   Projektet fokuserer på en overskuelig backendarkitektur, sikker adgang, datalagring og automatiserede tests.
-3. User Stories
-   User Stories beskriver funktioner i den aktuelle backend og planlagte udvidelser.
-   US1 – Opret arbejdsforespørgsel
-   User Story: Som besøgende vil jeg kunne oprette en arbejdsforespørgsel uden login.
-   Acceptance Criteria:
-- Kunden kan sende en forespørgsel uden login.
-- Forespørgslen gemmes i databasen.
-  Tasks:
-- [x] WorkRequest CRUD
-- [x] POST endpoint
-- [x] API-test
-  US2 – Se services
-  User Story: Som besøgende vil jeg kunne se virksomhedens services.
-  Acceptance Criteria:
-- Services kan ses uden login.
-- Services hentes fra databasen.
-  Tasks:
-- [x] Service entity
-- [ ] GET endpoint
-- [ ] API-test
-  US3 – Login med JWT
-  User Story: Som bruger vil jeg kunne logge ind og få adgang til systemet.
-  Acceptance Criteria:
-- Korrekt login giver et JWT-token.
-- Forkert login afvises.
-  Tasks:
-- [x] Login
-- [x] JWT
-- [x] BCrypt
-- [ ] Login-test
-  US4 – Roller og sikkerhed
-  User Story: Som administrator vil jeg beskytte API-endpoints med roller.
-  Acceptance Criteria:
-- ADMIN og MEDLEM har forskellige rettigheder.
-- Uautoriserede requests afvises.
-  Tasks:
-- [x] Roller
-- [x] JWT-verifikation
-- [x] Beskyttede endpoints
-- [ ] Sikkerhedstest
-  US5 – Se arbejdsforespørgsler
-  User Story: Som ADMIN eller MEDLEM vil jeg kunne se arbejdsforespørgsler.
-  Acceptance Criteria:
-- Brugeren kan hente alle forespørgsler.
-- Brugeren kan hente en forespørgsel via ID.
-  Tasks:
-- [x] GET endpoints
-- [x] DAO og Service
-- [x] API-tests
-  US6 – Opret tilbud
-  User Story: Som ADMIN vil jeg kunne oprette tilbud til kunder.
-  Acceptance Criteria:
-- Tilbuddet knyttes til en WorkRequest.
-- Tilbuddet gemmes i databasen.
-  Tasks:
-- [x] Offer CRUD
-- [x] ADMIN-adgang
-- [x] API-tests
-  US7 – Accepter eller afvis tilbud
-  User Story: Som kunde vil jeg kunne acceptere eller afvise et tilbud.
-  Acceptance Criteria:
-- Kunden kan acceptere eller afvise tilbuddet.
-- Tilbuddets status opdateres.
-  Tasks:
-- [ ] Accept endpoint
-- [ ] Afvis endpoint
-- [ ] API-test
-  US8 – Administrer services
-  User Story: Som ADMIN vil jeg kunne administrere virksomhedens services.
-  Acceptance Criteria:
-- ADMIN kan oprette, ændre og slette services.
-- Ændringer gemmes i databasen.
-  Tasks:
-- [ ] Service CRUD
-- [ ] ADMIN-adgang
-- [ ] API-test
-  US9 – AI-chat
-  User Story: Som kunde vil jeg kunne stille spørgsmål til en AI-chat.
-  Acceptance Criteria:
-- Kunden kan sende en besked.
-- AI returnerer et svar.
-  Tasks:
-- [x] Gemini API
-- [x] ChatService
-- [ ] API-test
-  US10 – AI-analyse
-  User Story: Som ADMIN vil jeg kunne analysere arbejdsforespørgsler med AI.
-  Acceptance Criteria:
-- ADMIN kan anmode om en analyse.
-- AI returnerer et forslag eller en analyse.
-  Tasks:
-- [ ] AI-analyse
-- [ ] ADMIN-adgang
-- [ ] API-test
-  US11 – Annuller arbejdsforespørgsler og tilbud
-  User Story: Som ADMIN vil jeg kunne annullere arbejdsforespørgsler og tilbud.
-  Acceptance Criteria:
-- Status ændres til ANNULLERET.
-- Kun ADMIN kan annullere.
-  Tasks:
-- [x] PATCH endpoints
-- [x] Statusopdatering
-- [x] API-tests
-  Status: [x] = tidligere implementeret eller gennemgået; [ ] = mangler eller skal verificeres. Status bør kontrolleres mod den aktuelle kode og testresultater.
+3. Brugerhistorier (User Stories)
 4. Funktionelle krav
-   REST API'et skal kunne:
-- Modtage en arbejdsforespørgsel uden login.
-- Gemme og hente arbejdsforespørgsler fra databasen.
-- Understøtte opdatering og annullering af arbejdsforespørgsler.
-- Understøtte tilbud, som er knyttet til arbejdsforespørgsler.
-- Give brugere mulighed for login med JWT.
-- Beskytte endpoints ud fra rollerne ADMIN og MEDLEM.
-- Håndtere services og deres relation til arbejdsforespørgsler.
-- Modtage beskeder til AI-chat via Gemini.
-- Returnere JSON og passende HTTP-statuskoder.
-  Planlagte eller ikke fuldt verificerede funktioner: kundens accept/afvisning af tilbud, komplet Service CRUD, offentlig servicevisning og administrativ AI-analyse.
 5. Ikke-funktionelle krav
-   Sikkerhed
-- Beskyttede endpoints kræver gyldigt JWT.
-- Adgangskoder lagres som hashes med BCrypt.
-- Roller kontrolleres på administrative funktioner.
-- Hemmelige API-nøgler må ikke indgå direkte i kildekoden.
-  Pålidelighed og validering
-- Ugyldige input skal give forståelige fejl.
-- Data skal gemmes korrekt i PostgreSQL.
-- Ukendte ressourcer skal give en passende fejl, fx HTTP 404.
-  Vedligeholdelse
-- Koden opdeles i Routes, Controllers, Services, DAO, DTO, Mappers og Entities.
-- Tests skal kunne køres automatisk.
-  API-design
-- API'et anvender HTTP-metoder som GET, POST, PUT, PATCH og DELETE efter behov.
-- Request og response sendes primært som JSON.
 6. Domænemodel
-   Domænemodellen beskriver de centrale begreber i backendprojektet:
-- User: En registreret bruger med login og roller.
-- Role: Bestemmer rettigheder, fx ADMIN og MEDLEM.
-- WorkRequest: En kundes forespørgsel om en arbejdsopgave.
-- Service: En type håndværksydelse.
-- Offer: Et tilbud knyttet til en arbejdsforespørgsel.
-  En WorkRequest kan oprettes uden en registreret bruger. En WorkRequest kan være knyttet til flere services og flere tilbud. Den præcise domænemodel skal svare til de aktuelle Java-entities.
-  Domænemodel
-
-Bemærk: Billedet skal kontrolleres og eventuelt opdateres, hvis det viser den tidligere booking- og projektmodel.
 7. Klassediagram
-   Klassediagrammet skal vise projektets faktiske Java-klasser og deres relationer. De vigtigste områder er:
-- Entities som User, Role, WorkRequest, Service og Offer.
-- DTO'er til input og output.
-- Controllers til HTTP-requests.
-- Services til forretningslogik.
-- DAO-klasser til databaseoperationer.
-- Mappers til konvertering mellem DTO og entity.
-  Klassediagram
-
-Diagrammet skal opdateres, hvis det stadig viser planlagte klasser som Review, Customer eller PaymentStatus.
 8. ER-diagram
-   ER-diagrammet beskriver relationerne mellem databasens tabeller. Centrale tabeller i den gennemgåede backend omfatter:
-- app_user
-- app_role / rolle-relaterede tabeller (navne kontrolleres mod entity-mapping)
-- user_role
-- work_request
-- service
-- work_request_service
-- offer
-  Tabellerne forbindes med primærnøgler (PK) og fremmednøgler (FK). work_request_service understøtter en many-to-many-relation. Et tilbud hører til en arbejdsforespørgsel.
-  ER-diagram
-
-Kontrollér diagrammets tabelnavne, kolonner og kardinaliteter mod PostgreSQL, før det anvendes som dokumentation for den aktuelle database.
 9. Sekvensdiagram
-   Et centralt flow er oprettelse af en arbejdsforespørgsel uden login:
-1. Kunden sender en POST-request med oplysninger om opgaven.
-2. Routes sender requesten til WorkRequestController.
-3. Controlleren læser og validerer input via DTO.
-4. WorkRequestService behandler forespørgslen.
-5. WorkRequestDAO gemmer data gennem Hibernate.
-6. PostgreSQL gemmer arbejdsforespørgslen.
-7. API'et returnerer et JSON-svar og en passende HTTP-status.
-   Sekvensdiagram
-
-Hvis billedet viser bookingkalender i stedet for WorkRequest-flowet, skal det udskiftes.
 10. Systemarkitektur
-    Systemet anvender en lagdelt backendarkitektur:
-    HTTP-klient → Routes → Controller → Service → DAO → JPA/Hibernate → PostgreSQL
-- Main: Starter applikationen og samler nødvendige komponenter.
-- API / Routes: Definerer REST-endpoints og deres adgangsregler.
-- Controller: Modtager HTTP-requests og returnerer responses.
-- Service: Indeholder forretningslogik.
-- DAO: Håndterer databaseoperationer.
-- DTO og Mappers: Overfører og konverterer data.
-- Entities: Repræsenterer data, som gemmes via Hibernate.
-- Config: Konfigurerer Javalin og Hibernate.
-- Security: Håndterer JWT og roller.
-- Exception: Håndterer fejl.
-- Test: Tester applikationens funktioner.
-  Gemini AI er en ekstern service, som backend kan kommunikere med.
-  Systemarkitektur
-
 11. Teknologier
-    Teknologi	Formål
-    Java	Programmeringssprog til backend
-    Javalin	REST API og HTTP-routing
-    Maven	Dependencies og build
-    JPA / Hibernate	ORM og databaseadgang
-    PostgreSQL	Relationel database
-    Docker	Lokalt udviklings- og testmiljø
-    Jackson	JSON-konvertering
-    JWT	Tokenbaseret autentifikation
-    BCrypt	Hashing af adgangskoder
-    Gemini API	AI-chat og mulig AI-analyse
-    JUnit	Automatiserede tests
-    Mockito	Mocking i unit tests
-    REST Assured	Test af REST-endpoints
-    Hamcrest	Assertions i API-tests
-    Git og GitHub	Versionsstyring
-    GitHub Actions	Automatisk build/CI
-    IntelliJ IDEA	Udviklingsmiljø
-
-
-Technology Stack
-
 12. Test
-    Tests bruges til at kontrollere API'ets funktionalitet, sikkerhed og samspil med databasen.
-    Unit Tests
-    JUnit og Mockito kan anvendes til at teste forretningslogik isoleret fra databasen. Relevante testområder er:
-- Oprettelse og validering af WorkRequest.
-- Statusændringer og annullering.
-- Oprettelse og behandling af Offer.
-- Fejlhåndtering i Service-laget.
-  Integration Tests og API-tests
-  REST Assured og Hamcrest anvendes til at teste HTTP-responses og API-endpoints. Relevante scenarier er:
-- POST WorkRequest uden login.
-- GET WorkRequest-liste og WorkRequest via ID.
-- HTTP 404 ved ukendt ID.
-- Oprettelse af Offer med ADMIN-adgang.
-- JWT-login og beskyttede endpoints.
-- PATCH-annullering af WorkRequest og Offer.
-- Korrekte HTTP-statuskoder og JSON-svar.
-  Manglende eller ikke verificerede tests
-- Kundens accept og afvisning af tilbud.
-- Fuld Service CRUD.
-- AI-chat ved fejl fra Gemini.
-- Administrativ AI-analyse.
-  Teststatus: Det samlede antal beståede tests bør hentes fra den seneste Maven-kørsel og ikke angives uden aktuel kontrol.
 13. Konklusion
-    Maler & Håndværk er et REST API, der samler virksomhedens arbejdsforespørgsler, tilbud og services i en backend. Besøgende kan sende arbejdsforespørgsler uden login, mens JWT og roller bruges til at beskytte administrative funktioner.
-    Systemet er bygget med Java, Javalin, Hibernate og PostgreSQL og anvender en lagdelt arkitektur med Controllers, Services og DAO. AI-chat via Gemini udvider mulighederne for at hjælpe kunder med spørgsmål.
-    Projektet giver praktisk erfaring med REST API-design, databaseforbindelser, sikkerhed, rollebaseret adgang, integrationer og automatiserede tests. Funktioner som kundens accept/afvisning af tilbud, komplet serviceadministration og administrativ AI-analyse er fortsat planlagte eller kræver verifikation.
-    [← Back](/projects/project3/)
+
+---
+
+## 1. Indledning
+
+Maler & Håndværk er en webapplikation til en virksomhed, der primært tilbyder malerarbejde, men også forskellige håndværksydelser såsom elektrikerarbejde, VVS-arbejde, tømrerarbejde, murerarbejde samt reparationer og vedligeholdelse i hjemmet.
+
+Webapplikationen skal kunne anvendes af både besøgende, private kunder og virksomheder.
+
+Besøgende skal kunne se virksomhedens ydelser, aktuelle tilbud og kampagner, kontaktoplysninger, anmeldelser samt FØR- og EFTER-billeder af tidligere udførte opgaver.
+
+En besøgende uden en konto skal også kunne sende en forespørgsel på en opgave gennem en formular.
+
+Registrerede kunder skal kunne logge ind, se ledige datoer og perioder og reservere en tid til en opgave. Kunden skal desuden kunne følge sit projekt, se start- og slutdato, pris, status, fremdrift og betaling.
+
+Administrator skal kunne administrere hjemmesidens indhold, arbejdsforespørgsler, projekter og reservationer.
+
+Applikationen udvikles i Java med Spring Boot og anvender JPA/Hibernate til databasekommunikation og PostgreSQL som relationel database.
+
+---
+
+## 2. Problemformulering
+
+Håndværksvirksomheder modtager ofte henvendelser gennem flere forskellige kanaler såsom telefon, e-mail og sociale medier.
+
+Dette kan gøre det vanskeligt at bevare et samlet overblik over arbejdsforespørgsler, kunder, reservationer, projekter, betalinger og igangværende arbejde.
+
+Samtidig kan kunder have behov for hurtigt at kunne se virksomhedens ydelser, priser og tilbud, tidligere udførte opgaver samt ledige perioder.
+
+Projektet tager derfor udgangspunkt i følgende problemformulering:
+
+> **Hvordan kan der udvikles en brugervenlig webapplikation, hvor besøgende og kunder nemt kan finde håndværksydelser, sende arbejdsforespørgsler og booke arbejde, samtidig med at registrerede kunder kan følge deres projekter, og administratoren kan administrere virksomhedens hjemmeside, forespørgsler, projekter og reservationer?**
+
+Systemet skal skabe en mere struktureret kommunikation mellem virksomheden og kunderne og samle de vigtigste funktioner ét sted.
+
+---
+
+# 3. Brugerhistorier (User Stories)
+
+Brugerhistorierne beskriver webapplikationens vigtigste funktioner set fra besøgendes, kunders og administratorens perspektiv.
+
+---
+
+## US1 – Ydelser
+
+**Som besøgende vil jeg kunne se alle de typer arbejde, virksomheden tilbyder, så jeg kan finde den ydelse, der passer til mit behov.**
+
+Eksempler på ydelser:
+
+- Malerarbejde
+- Elektrikerarbejde
+- VVS-arbejde
+- Tømrerarbejde
+- Murerarbejde
+- Reparationer og vedligeholdelse
+
+### Acceptance Criteria
+
+- Alle aktive ydelser vises på hjemmesiden.
+- Malerarbejde vises som virksomhedens primære ydelse.
+- Hver ydelse har navn og beskrivelse.
+- Besøgende kan åbne en ydelse og læse mere om den.
+
+### Tasks
+
+- Oprette Service entity.
+- Implementere visning af ydelser.
+- Hente aktive ydelser fra databasen.
+- Udvikle en detaljeside for hver ydelse.
+
+---
+
+## US2 – Tidligere udførte opgaver
+
+**Som besøgende vil jeg kunne se FØR- og EFTER-billeder af virksomhedens tidligere udførte opgaver, så jeg kan se eksempler på virksomhedens arbejde.**
+
+### Acceptance Criteria
+
+- Besøgende kan se FØR-billeder.
+- Besøgende kan se EFTER-billeder.
+- Billeder kan opdeles efter typen af arbejde.
+- Hvert projekt kan have flere billeder.
+
+### Tasks
+
+- Implementere lagring af billeder.
+- Knytte billeder til projekter eller ydelser.
+- Udvikle en side til visning af tidligere arbejde.
+
+---
+
+## US3 – Tilbud og kampagner
+
+**Som besøgende eller kunde vil jeg kunne se virksomhedens aktuelle tilbud og kampagner, så jeg kan se, om der findes en relevant rabat eller kampagne.**
+
+Eksempel:
+
+**Juletilbud**
+
+20 % rabat på indvendig maling.
+
+Gyldig fra 01.12 til 31.12.
+
+### Acceptance Criteria
+
+- Aktuelle tilbud vises på en separat side.
+- Et tilbud kan have titel og beskrivelse.
+- Et tilbud kan indeholde pris eller rabat.
+- Startdato og slutdato vises.
+- Udløbne tilbud vises ikke som aktive tilbud.
+
+### Tasks
+
+- Oprette Offer entity.
+- Implementere start- og slutdato.
+- Implementere visning af aktive tilbud.
+- Udvikle tilbudssiden.
+
+---
+
+## US4 – Kontakt & sociale medier
+
+**Som besøgende vil jeg kunne se virksomhedens kontaktoplysninger og sociale medier, så jeg nemt kan kontakte virksomheden.**
+
+### Acceptance Criteria
+
+Følgende information kan vises:
+
+- Telefonnummer
+- E-mail
+- Adresse
+- Åbningstider
+- Facebook
+- Instagram
+
+### Tasks
+
+- Udvikle kontaktside.
+- Gemme virksomhedens kontaktoplysninger.
+- Implementere links til sociale medier.
+
+---
+
+## US5 – Formular "Få et tilbud"
+
+**Som besøgende uden en konto vil jeg kunne udfylde en formular om den ønskede opgave, så virksomheden kan kontakte mig og give mig et tilbud.**
+
+### Acceptance Criteria
+
+Besøgende kan angive:
+
+- Fornavn
+- Efternavn
+- E-mail
+- Telefonnummer
+- Adresse
+- Type af arbejde
+- Beskrivelse
+- Billeder
+
+Forespørgslen gemmes i systemet og bliver tilgængelig for administratoren.
+
+### Tasks
+
+- Udvikle formularen.
+- Implementere validering.
+- Implementere upload af billeder.
+- Gemme forespørgslen i databasen.
+- Knytte forespørgslen til den valgte ydelse.
+
+---
+
+## US6 – Login efter rolle
+
+**Som bruger vil jeg kunne logge ind i systemet, så jeg får adgang til de funktioner, der tilhører min rolle.**
+
+Systemet har to roller:
+
+- `CUSTOMER`
+- `ADMIN`
+
+### CUSTOMER
+
+En kunde får adgang til:
+
+- Booking
+- Egne reservationer
+- Egne projekter
+- Projektstatus
+- Betalingsinformation
+
+### ADMIN
+
+En administrator får adgang til:
+
+- Administration af hjemmesiden
+- Arbejdsforespørgsler
+- Projekter
+- Reservationer
+
+### Acceptance Criteria
+
+- Brugeren kan logge ind.
+- Systemet identificerer brugerens rolle.
+- CUSTOMER kan kun se sine egne oplysninger.
+- ADMIN får adgang til administrationsfunktionerne.
+- Brugeren kan logge ud.
+
+### Tasks
+
+- Oprette User entity.
+- Oprette Role enum.
+- Implementere login.
+- Implementere adgangskontrol.
+- Implementere logout.
+
+---
+
+## US7 – Booking af tid
+
+**Som privatkunde eller virksomhed vil jeg kunne se ledige datoer eller perioder og booke en tid til det arbejde, jeg ønsker udført.**
+
+Ved bookingen skal kunden også kunne beskrive den ønskede opgave.
+
+### Acceptance Criteria
+
+Kunden kan:
+
+- Se ledige datoer.
+- Se ledige perioder.
+- Vælge en dato eller periode.
+- Vælge typen af arbejde.
+- Angive adressen.
+- Skrive en beskrivelse af arbejdet.
+- Tilføje billeder.
+- Bekræfte bookingen.
+
+### Tasks
+
+- Implementere bookingkalender.
+- Implementere kontrol af ledige datoer.
+- Udvikle bookingformular.
+- Gemme reservationen i databasen.
+- Knytte reservationen til kunden.
+
+---
+
+## US8 – Mit projekt
+
+**Som kunde vil jeg have en side, hvor jeg kan følge mit projekt og se de vigtigste oplysninger om arbejdet.**
+
+### Acceptance Criteria
+
+Kunden kan se:
+
+- Projektets navn/type.
+- Startdato.
+- Slutdato.
+- Pris.
+- Status.
+- Fremdrift.
+- Betalingsstatus.
+- Billeder fra projektet.
+
+Kunden kan annullere sin reservation **senest én uge før projektets startdato**.
+
+Hvis der er mindre end 7 dage til projektets start, kan kunden ikke selv annullere reservationen.
+
+### Tasks
+
+- Udvikle siden "Mit projekt".
+- Hente kundens egne projekter.
+- Implementere projektstatus.
+- Implementere fremdrift.
+- Implementere betalingsstatus.
+- Implementere regel for annullering.
+- Implementere visning af projektbilleder.
+
+---
+
+## US9 – Vurderinger og anmeldelser
+
+**Som kunde eller besøgende vil jeg kunne se anmeldelser fra andre kunder, så jeg kan få et indtryk af virksomhedens arbejde.**
+
+Efter en afsluttet opgave kan en kunde skrive sin egen anmeldelse.
+
+### Acceptance Criteria
+
+- Alle besøgende kan se anmeldelser.
+- Kunden kan give 1–5 stjerner.
+- Kunden kan skrive en kommentar.
+- En anmeldelse kan oprettes efter afsluttet arbejde.
+- Anmeldelsen knyttes til kunden og projektet.
+
+### Tasks
+
+- Oprette Review entity.
+- Implementere reviewformular.
+- Validere rating fra 1–5.
+- Gemme anmeldelser i databasen.
+- Implementere visning af anmeldelser.
+
+---
+
+## US10 – Administration af hjemmesiden
+
+**Som administrator vil jeg kunne administrere hjemmesidens indhold, så virksomhedens information altid er opdateret.**
+
+### Acceptance Criteria
+
+Administrator kan:
+
+- Oprette, ændre og fjerne ydelser.
+- Ændre beskrivelser af ydelser.
+- Aktivere og deaktivere ydelser.
+- Tilføje og fjerne FØR/EFTER-billeder.
+- Opdatere telefonnummer.
+- Opdatere e-mail.
+- Opdatere adresse.
+- Opdatere åbningstider.
+- Opdatere links til sociale medier.
+- Administrere anmeldelser.
+- Oprette, ændre og fjerne tilbud og kampagner.
+
+### Tasks
+
+- Udvikle administrationsside.
+- Implementere CRUD for ydelser.
+- Implementere administration af billeder.
+- Implementere administration af kontaktoplysninger.
+- Implementere administration af tilbud.
+- Implementere administration af anmeldelser.
+
+---
+
+## US11 – Håndtering af arbejdsforespørgsler
+
+**Som administrator vil jeg kunne modtage og administrere arbejdsforespørgsler fra personer uden en konto, så jeg kan vurdere opgaven og give dem et tilbud.**
+
+### Acceptance Criteria
+
+Administrator kan se:
+
+- Navn.
+- E-mail.
+- Telefonnummer.
+- Adresse.
+- Type af arbejde.
+- Beskrivelse.
+- Billeder.
+
+Administrator kan:
+
+- Åbne en forespørgsel.
+- Behandle forespørgslen.
+- Give kunden et tilbud.
+- Ændre forespørgslens status.
+- Afvise forespørgslen.
+
+### Tasks
+
+- Implementere oversigt over forespørgsler.
+- Implementere detaljevisning.
+- Implementere status.
+- Implementere mulighed for at oprette et tilbud.
+
+---
+
+## US12 – Administration af projekter & reservationer
+
+**Som administrator vil jeg kunne administrere alle projekter og reservationer, så virksomheden har et samlet overblik over planlagte og igangværende opgaver.**
+
+### Acceptance Criteria
+
+Administrator kan:
+
+- Se alle projekter.
+- Se alle reservationer.
+- Se hvilken kunde eller virksomhed projektet tilhører.
+- Ændre startdato.
+- Ændre slutdato.
+- Ændre pris.
+- Ændre projektets status.
+- Opdatere projektets fremdrift.
+- Opdatere betalingsstatus.
+- Tilføje billeder til projektet.
+- Ændre en reservation.
+- Annullere en reservation.
+
+### Tasks
+
+- Implementere projektadministration.
+- Implementere reservationsadministration.
+- Implementere ændring af datoer.
+- Implementere pris.
+- Implementere projektstatus.
+- Implementere fremdrift.
+- Implementere betalingsstatus.
+- Implementere projektbilleder.
+
+---
+
+# 4. Funktionelle krav
+
+De funktionelle krav beskriver de funktioner, som Maler & Håndværk skal understøtte.
+
+Systemet skal kunne:
+
+- Vise virksomhedens ydelser.
+- Vise detaljer om hver ydelse.
+- Vise FØR- og EFTER-billeder.
+- Vise aktuelle tilbud og kampagner.
+- Vise virksomhedens kontaktoplysninger.
+- Vise links til sociale medier.
+- Modtage arbejdsforespørgsler fra besøgende uden konto.
+- Modtage beskrivelser og billeder sammen med en forespørgsel.
+- Oprette brugere.
+- Understøtte rollerne CUSTOMER og ADMIN.
+- Give brugere mulighed for login og logout.
+- Vise ledige datoer og perioder.
+- Give kunder mulighed for at foretage en booking.
+- Gemme start- og slutdato for projekter.
+- Give kunder adgang til deres egne projekter.
+- Vise pris, status, fremdrift og betalingsstatus.
+- Give kunden mulighed for at annullere senest 7 dage før start.
+- Give kunder mulighed for at skrive anmeldelser.
+- Give administratoren mulighed for at administrere hjemmesidens indhold.
+- Administrere arbejdsforespørgsler.
+- Administrere tilbud.
+- Administrere projekter og reservationer.
+- Administrere billeder.
+- Administrere ydelser.
+- Administrere kontaktoplysninger.
+- Gemme relevante oplysninger i PostgreSQL-databasen.
+
+---
+
+# 5. Ikke-funktionelle krav
+
+## Brugervenlighed
+
+Webapplikationen skal have en enkel og overskuelig brugergrænseflade.
+
+Besøgende skal hurtigt kunne finde virksomhedens ydelser, tilbud, tidligere arbejde og kontaktoplysninger.
+
+Kunder skal nemt kunne booke en tid og følge deres projekter.
+
+## Responsivt design
+
+Webapplikationen skal kunne anvendes på:
+
+- Computer
+- Tablet
+- Mobiltelefon
+
+## Sikkerhed
+
+Brugeroplysninger og adgangskoder skal håndteres sikkert.
+
+Systemet skal anvende rollebaseret adgang.
+
+En kunde må kun kunne se sine egne projekter og reservationer.
+
+Administrationsfunktionerne må kun være tilgængelige for brugere med rollen `ADMIN`.
+
+## Pålidelighed
+
+Systemet skal sikre, at reservationer, projekter, arbejdsforespørgsler og betalinger gemmes korrekt.
+
+Systemet skal forhindre, at den samme periode bliver reserveret flere gange, hvis den ikke er tilgængelig.
+
+## Vedligeholdelse
+
+Applikationen skal anvende en tydelig lagdelt arkitektur med:
+
+**Controller → Service → Repository → Database**
+
+Dette gør koden mere overskuelig og nemmere at vedligeholde.
+
+## Validering
+
+Systemet skal validere brugerinput såsom:
+
+- Navn
+- E-mail
+- Telefonnummer
+- Adresse
+- Datoer
+- Beskrivelse
+- Rating
+
+---
+
+# 6. Domænemodel
+
+Domænemodellen beskriver de vigtigste objekter i Maler & Håndværk-systemet.
+
+De centrale domæneklasser kan være:
+
+- User
+- Customer
+- Service
+- WorkRequest
+- Booking
+- Project
+- Offer
+- Review
+- Image
+- ContactInformation
+- Role
+
+`User` bruges til login og rollebaseret adgang.
+
+En `Customer` kan være en privatkunde eller en virksomhed.
+
+En kunde kan have flere bookinger og projekter.
+
+En `Service` repræsenterer en type håndværksydelse såsom malerarbejde, elektrikerarbejde eller VVS.
+
+En `WorkRequest` repræsenterer en arbejdsforespørgsel fra en besøgende uden konto.
+
+En `Booking` indeholder information om den ønskede dato eller periode.
+
+Når en opgave bliver planlagt, kan den være knyttet til et `Project`.
+
+Et projekt indeholder blandt andet startdato, slutdato, pris, status, fremdrift og betalingsstatus.
+
+Et `Offer` repræsenterer virksomhedens aktuelle tilbud og kampagner.
+
+En `Review` indeholder kundens rating og kommentar.
+
+Billeder kan anvendes til både tidligere udførte opgaver, arbejdsforespørgsler og projekter.
+
+### Domænemodel
+
+![Domænemodel](img/maler-domain-model.png)
+
+---
+
+# 7. Klassediagram
+
+Klassediagrammet viser de Java-klasser, der anvendes til implementeringen af systemet.
+
+De vigtigste klasser kan være:
+
+- User
+- Customer
+- Service
+- WorkRequest
+- Booking
+- Project
+- Offer
+- Review
+- Image
+- ContactInformation
+
+Derudover anvendes enums såsom:
+
+- Role
+- ProjectStatus
+- PaymentStatus
+
+Relationerne mellem klasserne implementeres med JPA/Hibernate.
+
+Eksempelvis kan en kunde have flere projekter, mens hvert projekt tilhører én kunde.
+
+### Klassediagram
+
+![Klassediagram](img/maler-class-diagram.png)
+
+---
+
+# 8. ER-diagram
+
+ER-diagrammet viser strukturen i PostgreSQL-databasen.
+
+De vigtigste tabeller kan være:
+
+- users
+- customers
+- services
+- work_requests
+- bookings
+- projects
+- offers
+- reviews
+- images
+- contact_information
+
+Hver tabel har en Primary Key (PK).
+
+Foreign Keys (FK) anvendes til at oprette relationer mellem tabellerne.
+
+Et projekt kan eksempelvis være knyttet til en kunde, en booking og en bestemt ydelse.
+
+### ER-diagram
+
+![ER-diagram](img/maler-er-diagram.png)
+
+---
+
+# 9. Sekvensdiagram
+
+Et vigtigt flow i systemet er booking af en håndværksopgave.
+
+Processen kan foregå således:
+
+1. Kunden logger ind.
+2. Kunden åbner bookingsiden.
+3. Systemet henter ledige datoer.
+4. Kunden vælger en dato eller periode.
+5. Kunden vælger typen af arbejde.
+6. Kunden indtaster adressen.
+7. Kunden beskriver opgaven.
+8. Kunden tilføjer eventuelt billeder.
+9. Kunden sender bookingen.
+10. Systemet validerer oplysningerne.
+11. Systemet kontrollerer, om perioden stadig er ledig.
+12. Bookingen gemmes i databasen.
+13. Kunden modtager en bekræftelse.
+14. Administratoren kan efterfølgende administrere reservationen.
+
+Sekvensdiagrammet viser kommunikationen mellem brugergrænsefladen, Controller, Service, Repository og databasen.
+
+### Sekvensdiagram
+
+![Sekvensdiagram](img/maler-sequence-diagram.png)
+
+---
+
+# 10. Systemarkitektur
+
+Maler & Håndværk udvikles med en lagdelt arkitektur.
+
+Systemets overordnede struktur er:
+
+**Browser → Controller → Service → Repository → PostgreSQL**
+
+## Controller
+
+Controller-laget modtager HTTP-requests fra frontend og sender dem videre til Service-laget.
+
+Controlleren håndterer eksempelvis requests omkring:
+
+- Ydelser
+- Booking
+- Projekter
+- Arbejdsforespørgsler
+- Tilbud
+- Reviews
+
+## Service
+
+Service-laget indeholder systemets forretningslogik.
+
+Her håndteres blandt andet:
+
+- Validering
+- Login og roller
+- Kontrol af ledige datoer
+- Booking
+- 7-dages-reglen for annullering
+- Projektstatus
+- Fremdrift
+- Betalingsstatus
+- Arbejdsforespørgsler
+- Reviews
+
+## Repository
+
+Repository-laget kommunikerer med databasen.
+
+Det bruges til at:
+
+- Gemme data
+- Hente data
+- Opdatere data
+- Slette data
+
+## Database
+
+PostgreSQL anvendes som relationel database til systemets data.
+
+### Systemarkitektur
+
+![Systemarkitektur](img/maler-system-architecture.png)
+
+---
+
+# 11. Teknologier
+
+## Java
+
+Java anvendes som det primære programmeringssprog til backend og forretningslogik.
+
+## Spring Boot
+
+Spring Boot anvendes til at udvikle webapplikationen og REST API'et.
+
+## JPA / Hibernate
+
+JPA og Hibernate anvendes til Object-Relational Mapping (ORM) mellem Java-klasser og PostgreSQL-tabeller.
+
+## PostgreSQL
+
+PostgreSQL anvendes som relationel database.
+
+## Maven
+
+Maven anvendes til dependency management og projektets biblioteker.
+
+## Git og GitHub
+
+Git anvendes til versionsstyring.
+
+GitHub anvendes til at gemme projektets repository og følge ændringer i kildekoden.
+
+## Docker
+
+Docker kan anvendes til at køre PostgreSQL i et isoleret udviklingsmiljø.
+
+## IntelliJ IDEA
+
+IntelliJ IDEA anvendes til programmering, test og udvikling af backend.
+
+## HTML / CSS / JavaScript
+
+HTML, CSS og JavaScript anvendes til udvikling af brugergrænsefladen.
+
+### Technology Stack
+
+![Technology Stack](img/maler-technology-stack.png)
+
+---
+
+# 12. Test
+
+Test anvendes til at kontrollere, at systemets funktioner fungerer korrekt.
+
+Der anvendes både Unit Tests og Integration Tests.
+
+## Unit Tests
+
+JUnit 5 kan anvendes til Unit Tests.
+
+Mockito kan anvendes til at teste Service-laget uden at være afhængig af den rigtige database.
+
+Der kan blandt andet testes:
+
+- Validering af e-mail.
+- Validering af telefonnummer.
+- Validering af arbejdsforespørgsler.
+- Kontrol af ledige datoer.
+- Booking af en ledig periode.
+- Kontrol af start- og slutdato.
+- Beregning af 7-dages-reglen for annullering.
+- Ændring af projektstatus.
+- Ændring af betalingsstatus.
+- Validering af rating fra 1–5.
+- Kontrol af brugerroller.
+
+## Integration Tests
+
+Integration Tests anvendes til at kontrollere samspillet mellem applikationen og databasen.
+
+Der kan blandt andet testes:
+
+- Oprettelse af bruger.
+- Oprettelse af kunde.
+- Oprettelse af ydelse.
+- Oprettelse af arbejdsforespørgsel.
+- Oprettelse af booking.
+- Oprettelse af projekt.
+- Oprettelse af tilbud.
+- Oprettelse af anmeldelse.
+- Hentning af kundens projekter.
+- Opdatering af projekt.
+- Opdatering af reservation.
+- Relationer mellem entities.
+- Lagring og hentning af data fra PostgreSQL.
+
+## Test af booking
+
+Booking er et af systemets vigtigste områder.
+
+Systemet skal kontrollere:
+
+1. At kunden er logget ind.
+2. At den valgte ydelse eksisterer.
+3. At start- og slutdato er gyldige.
+4. At den valgte dato eller periode er ledig.
+5. At de nødvendige oplysninger er udfyldt.
+6. At bookingen gemmes korrekt.
+
+## Test af annullering
+
+Systemet skal kontrollere forskellen mellem den aktuelle dato og projektets startdato.
+
+Hvis der er mindst 7 dage til startdatoen, kan kunden annullere reservationen.
+
+Hvis der er mindre end 7 dage til startdatoen, skal systemet afvise kundens forsøg på selv at annullere reservationen.
+
+---
+
+# 13. Konklusion
+
+Maler & Håndværk er en webapplikation, der samler virksomhedens håndværksydelser, kundehenvendelser, reservationer og projekter i ét system.
+
+Virksomhedens primære arbejdsområde er malerarbejde, men systemet understøtter også elektrikerarbejde, VVS-arbejde, tømrerarbejde, murerarbejde samt reparationer og vedligeholdelse.
+
+Besøgende kan se virksomhedens ydelser, tilbud, kontaktoplysninger, anmeldelser og FØR/EFTER-billeder samt sende en arbejdsforespørgsel uden at oprette en konto.
+
+Registrerede kunder kan logge ind, se ledige datoer, booke en opgave og følge deres projekter. Kunden kan se startdato, slutdato, pris, status, fremdrift og betalingsstatus samt annullere en reservation senest én uge før projektets start.
+
+Administrator har mulighed for at administrere hjemmesidens indhold, arbejdsforespørgsler, tilbud, projekter og reservationer.
+
+Systemet anvender rollebaseret adgang med rollerne CUSTOMER og ADMIN.
+
+Projektet udvikles med Java, Spring Boot, JPA/Hibernate og PostgreSQL og anvender en lagdelt arkitektur med Controller, Service og Repository.
+
+Projektet giver dermed praktisk erfaring med udvikling af en komplet webapplikation, herunder systemdesign, databasedesign, login og roller, REST API, booking, projektadministration, JPA/Hibernate, test og frontend-udvikling.
+
+---
+
+[← Back](/projects/project3/)

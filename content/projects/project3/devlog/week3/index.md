@@ -1,52 +1,41 @@
 +++
-title = "Uge 36 – DAO og CRUD Operations"
+title = "Week 3 - Database Design"
+date = "2026-09-04"
 draft = false
-
-[build]
-list = "never"
 +++
 
-I denne uge arbejdede jeg videre med **Maler & Håndværk** og begyndte at implementere **DAO-laget**.
+## Week 3 - Database Design
 
-DAO står for **Data Access Object** og bruges til at håndtere kommunikationen mellem Java-programmet og databasen.
+This week I focused on designing the database for the **Maler & Håndværk** web application.
 
-Jeg oprettede DAO-klasser til de forskellige dele af systemet, så databasekoden er adskilt fra resten af programmet.
+I started identifying the main entities needed to store information about customers, services and customer requests.
 
-## Hvad jeg arbejdede med
+### Main Entities
 
-Jeg arbejdede blandt andet med:
+- Customer
+- Service
+- Service Request
+- Craftsman
+- Review
 
-- `BookingDAO`
-- `PersonDAO`
-- `ServiceDAO`
-- `WorkRequestDAO`
-- `OfferDAO`
+### Database Planning
 
-Jeg implementerede også **CRUD-operationer**.
+I worked on defining:
 
-CRUD står for:
+- Primary keys
+- Foreign keys
+- Relationships between entities
+- Required fields for each entity
+- The structure of the ER diagram
 
-- **Create** – Oprette nye data.
-- **Read** – Hente data fra databasen.
-- **Update** – Opdatere eksisterende data.
-- **Delete** – Slette data.
+### What I Learned
 
-## Databasekommunikation
-
-DAO-klasserne bruger **JPA/Hibernate** til at kommunikere med PostgreSQL-databasen.
-
-Jeg arbejdede med `EntityManager` og transactions til at gemme, hente, ændre og slette data.
-
-Strukturen begynder derfor at blive:
-
-`Java Application → DAO → JPA/Hibernate → PostgreSQL`
-
-## Resultat
-
-Efter denne uge kunne programmet begynde at arbejde med data i databasen gennem DAO-klasserne.
-
-Det gav en bedre struktur i projektet, fordi databasekommunikationen blev samlet i sit eget lag.
+- How to design a relational database
+- How entities are connected
+- How primary and foreign keys work
+- How to create an ER diagram before implementing the database
 
 ---
 
 [Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)
+

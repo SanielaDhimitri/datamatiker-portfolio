@@ -1,47 +1,32 @@
 +++
-title = "Uge 34 – Planlægning og User Stories"
+title = "Week 1 - Project Idea and Planning"
+date = "2026-09-04"
 draft = false
-
-[build]
-list = "never"
 +++
 
-I denne uge startede jeg mit semesterprojekt **Maler & Håndværk**.
+## Week 1 - Project Idea and Planning
 
-Jeg begyndte med at planlægge projektet og definere, hvad systemet skal kunne. Formålet er at udvikle et system til en håndværksvirksomhed, hvor kunder kan se services, sende arbejdsforespørgsler, få tilbud og oprette bookinger.
+This week I started planning my **Maler & Håndværk** web application.
 
-Jeg arbejdede med **problemformulering** og **business requirements** for at få en klar forståelse af projektets formål og krav.
+The idea is to create a web application for a company that primarily offers painting services, together with other home services such as electrical work, plumbing, carpentry, masonry and home repairs.
 
-Derefter lavede jeg **User Stories** og **Acceptance Criteria** for de vigtigste funktioner i systemet.
+### Main Services
 
-Jeg arbejdede også med **diagrammer** for at visualisere systemets struktur og relationerne mellem de forskellige dele.
+- Malerarbejde
+- Elektrikerarbejde
+- VVS-arbejde
+- Tømrerarbejde
+- Murerarbejde
+- Reparationer i hjemmet
 
-## Hvad jeg arbejdede med
+### What I Worked On
 
-- **Problemformulering** – Definerede projektets problem og formål.
-- **Business Requirements** – Beskrev hvilke funktioner systemet skal understøtte.
-- **User Stories** – Beskrev funktionaliteten fra brugerens perspektiv.
-- **Acceptance Criteria** – Definerede hvornår en User Story kan betragtes som færdig.
-- **Diagrammer** – Visualiserede systemets struktur og relationer.
-- **Projektstruktur** – Planlagde de vigtigste dele af systemet.
-
-## Centrale funktioner
-
-Projektet skal blandt andet understøtte:
-
-- Services
-- Brugere og medarbejdere
-- Bookinger
-- Arbejdsforespørgsler
-- Tilbud
-- Admin-funktioner
-
-## Projektrapport
-
-Flere detaljer om analyse og planlægning findes i min projektrapport:
-
-[Se projektrapport](../../report/)
+- Defined the project idea
+- Identified the main services
+- Started planning the application structure
+- Considered the main entities and database structure
 
 ---
 
 [Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)
+
