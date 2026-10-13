@@ -1,32 +1,47 @@
 +++
-title = "Week 1 - Project Idea and Planning"
-date = "2026-09-04"
+title = "Uge 34 – Planlægning og User Stories"
 draft = false
+
+[build]
+list = "never"
 +++
 
-## Week 1 - Project Idea and Planning
+I denne uge startede jeg mit semesterprojekt **Maler & Håndværk**.
 
-This week I started planning my **Maler & Håndværk** web application.
+Jeg begyndte med at planlægge projektet og definere, hvad systemet skal kunne. Formålet er at udvikle et system til en håndværksvirksomhed, hvor kunder kan se services, sende arbejdsforespørgsler, få tilbud og oprette bookinger.
 
-The idea is to create a web application for a company that primarily offers painting services, together with other home services such as electrical work, plumbing, carpentry, masonry and home repairs.
+Jeg arbejdede med **problemformulering** og **business requirements** for at få en klar forståelse af projektets formål og krav.
 
-### Main Services
+Derefter lavede jeg **User Stories** og **Acceptance Criteria** for de vigtigste funktioner i systemet.
 
-- Malerarbejde
-- Elektrikerarbejde
-- VVS-arbejde
-- Tømrerarbejde
-- Murerarbejde
-- Reparationer i hjemmet
+Jeg arbejdede også med **diagrammer** for at visualisere systemets struktur og relationerne mellem de forskellige dele.
 
-### What I Worked On
+## Hvad jeg arbejdede med
 
-- Defined the project idea
-- Identified the main services
-- Started planning the application structure
-- Considered the main entities and database structure
+- **Problemformulering** – Definerede projektets problem og formål.
+- **Business Requirements** – Beskrev hvilke funktioner systemet skal understøtte.
+- **User Stories** – Beskrev funktionaliteten fra brugerens perspektiv.
+- **Acceptance Criteria** – Definerede hvornår en User Story kan betragtes som færdig.
+- **Diagrammer** – Visualiserede systemets struktur og relationer.
+- **Projektstruktur** – Planlagde de vigtigste dele af systemet.
+
+## Centrale funktioner
+
+Projektet skal blandt andet understøtte:
+
+- Services
+- Brugere og medarbejdere
+- Bookinger
+- Arbejdsforespørgsler
+- Tilbud
+- Admin-funktioner
+
+## Projektrapport
+
+Flere detaljer om analyse og planlægning findes i min projektrapport:
+
+[Se projektrapport](../../report/)
 
 ---
 
 [Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)
-

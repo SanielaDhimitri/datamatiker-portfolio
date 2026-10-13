@@ -1,31 +1,51 @@
 +++
-title = "Week 4 – Entities and Relationships"
+title = "Uge 37 – Service Layer og Menu"
 draft = false
 
 [build]
 list = "never"
 +++
 
-This week, I focused on creating and working with **entities and relationships** in the Villa Room Booking System.
+I denne uge arbejdede jeg videre med **Maler & Håndværk** og fokuserede på programmets struktur.
 
-I worked on defining the main entities needed for the application and organizing their attributes. I also focused on how the entities are connected to each other in the database.
+Jeg begyndte at arbejde med **Service Layer**, som ligger mellem Menu-klasserne og DAO-klasserne.
 
-Using **JPA and Hibernate**, I worked with entity annotations and relationships to make sure the Java classes correctly represent the database structure.
+Service-klasserne håndterer programmets logik og bruger DAO-klasserne, når der skal hentes eller gemmes data i databasen.
 
-## What I worked on
+## Menu-system
 
-- **Entities** – Created and organized the main entities used in the system.
-- **Attributes** – Defined the data that each entity should contain.
-- **JPA annotations** – Used annotations to map Java classes to database tables.
-- **Relationships** – Worked with relationships between the different entities.
-- **Database structure** – Continued improving the structure of the database.
+Jeg oprettede forskellige Menu-klasser for at gøre programmet mere overskueligt og brugervenligt i konsollen.
 
-## Project Report
+Jeg arbejdede blandt andet med:
 
-More details about the project can be found in my Project Report:
+- `MainMenu`
+- `PersonMenu`
+- `BookingMenu`
+- `WorkRequestMenu`
+- `OfferMenu`
 
-**[View Project Report](../../report/)**
+`MainMenu` fungerer som programmets hovedmenu, hvor brugeren kan vælge, hvilken del af systemet der skal bruges.
+
+De andre Menu-klasser håndterer funktionaliteten for deres eget område.
+
+## Programmets struktur
+
+Projektet er nu opdelt i forskellige lag:
+
+`Menu → Service → DAO → JPA/Hibernate → PostgreSQL`
+
+- **Menu** – Håndterer brugerens input og valg.
+- **Service** – Håndterer programmets logik.
+- **DAO** – Håndterer kommunikationen med databasen.
+- **JPA/Hibernate** – Mapper Java-objekter til databasen.
+- **PostgreSQL** – Gemmer programmets data.
+
+## Resultat
+
+Denne struktur gør programmet mere overskueligt, fordi de forskellige klasser har forskellige ansvarsområder.
+
+Det gør det også lettere at arbejde videre med funktioner som Booking, WorkRequest, Offer og Person.
 
 ---
 
-[← Back](/projects/project1/devlog/)
+[← Tilbage](/projects/project1/devlog/)

@@ -1,43 +1,59 @@
 +++
-title = "Week 5 - DAO and CRUD Operations"
-date = "2026-09-04"
+title = "Uge 38 – Funktionalitet og Tests"
 draft = false
+
+[build]
+list = "never"
 +++
 
-## Week 5 - DAO and CRUD Operations
+I denne uge arbejdede jeg videre med funktionaliteten i **Maler & Håndværk**.
 
-This week I focused on creating the DAO layer for the **Maler & Håndværk** web application.
+Jeg fokuserede på at få de forskellige dele af programmet til at fungere sammen og testede kommunikationen mellem Java-programmet og databasen.
 
-The DAO layer is responsible for communicating with the database and managing the application data.
+## Funktionalitet
 
-### CRUD Operations
+Jeg arbejdede videre med flere af projektets centrale funktioner:
 
-I worked with the main CRUD operations:
+- `Booking`
+- `WorkRequest`
+- `Offer`
+- `Person`
+- `Service`
 
-- Create â€“ add new data
-- Read â€“ retrieve data from the database
-- Update â€“ modify existing data
-- Delete â€“ remove data
+Jeg arbejdede blandt andet med at oprette, hente og ændre data gennem Menu-, Service- og DAO-lagene.
 
-### DAO Structure
+Jeg arbejdede også med **validation og error handling**, så programmet bedre kan håndtere ugyldige input og fejl.
 
-I started creating DAO classes for the main entities, such as:
+## Tests
 
-- CustomerDAO
-- CraftsmanDAO
-- ServiceDAO
-- ServiceRequestDAO
-- ReviewDAO
+Jeg lavede tests til mine DAO-klasser for at kontrollere, at kommunikationen med databasen fungerer korrekt.
 
-### What I Learned
+Jeg testede blandt andet:
 
-- How the DAO pattern works
-- How to use `EntityManager`
-- How to save and retrieve entities
-- How to update and delete database records
-- How to separate database logic from the rest of the application
+- `BookingDAO`
+- `OfferDAO`
+- `PersonDAO`
+- `ServiceDAO`
+- `WorkRequestDAO`
+
+Testene bruges til at kontrollere, at data kan oprettes, hentes, opdateres og slettes korrekt i databasen.
+
+## Debugging
+
+Under arbejdet fandt jeg også forskellige fejl i programmet.
+
+Jeg brugte debugging og fejlmeddelelser til at finde årsagen til problemerne og rette dem.
+
+Det hjalp mig med at forstå bedre, hvordan de forskellige lag i programmet arbejder sammen.
+
+## Resultat
+
+Efter denne uge var flere af projektets centrale funktioner forbundet med databasen og testet.
+
+Projektets struktur var nu:
+
+`Menu → Service → DAO → JPA/Hibernate → PostgreSQL`
 
 ---
 
 [Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)
-

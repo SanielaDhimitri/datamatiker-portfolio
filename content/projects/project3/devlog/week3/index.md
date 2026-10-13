@@ -1,41 +1,52 @@
 +++
-title = "Week 3 - Database Design"
-date = "2026-09-04"
+title = "Uge 36 – DAO og CRUD Operations"
 draft = false
+
+[build]
+list = "never"
 +++
 
-## Week 3 - Database Design
+I denne uge arbejdede jeg videre med **Maler & Håndværk** og begyndte at implementere **DAO-laget**.
 
-This week I focused on designing the database for the **Maler & Håndværk** web application.
+DAO står for **Data Access Object** og bruges til at håndtere kommunikationen mellem Java-programmet og databasen.
 
-I started identifying the main entities needed to store information about customers, services and customer requests.
+Jeg oprettede DAO-klasser til de forskellige dele af systemet, så databasekoden er adskilt fra resten af programmet.
 
-### Main Entities
+## Hvad jeg arbejdede med
 
-- Customer
-- Service
-- Service Request
-- Craftsman
-- Review
+Jeg arbejdede blandt andet med:
 
-### Database Planning
+- `BookingDAO`
+- `PersonDAO`
+- `ServiceDAO`
+- `WorkRequestDAO`
+- `OfferDAO`
 
-I worked on defining:
+Jeg implementerede også **CRUD-operationer**.
 
-- Primary keys
-- Foreign keys
-- Relationships between entities
-- Required fields for each entity
-- The structure of the ER diagram
+CRUD står for:
 
-### What I Learned
+- **Create** – Oprette nye data.
+- **Read** – Hente data fra databasen.
+- **Update** – Opdatere eksisterende data.
+- **Delete** – Slette data.
 
-- How to design a relational database
-- How entities are connected
-- How primary and foreign keys work
-- How to create an ER diagram before implementing the database
+## Databasekommunikation
+
+DAO-klasserne bruger **JPA/Hibernate** til at kommunikere med PostgreSQL-databasen.
+
+Jeg arbejdede med `EntityManager` og transactions til at gemme, hente, ændre og slette data.
+
+Strukturen begynder derfor at blive:
+
+`Java Application → DAO → JPA/Hibernate → PostgreSQL`
+
+## Resultat
+
+Efter denne uge kunne programmet begynde at arbejde med data i databasen gennem DAO-klasserne.
+
+Det gav en bedre struktur i projektet, fordi databasekommunikationen blev samlet i sit eget lag.
 
 ---
 
 [Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)
-

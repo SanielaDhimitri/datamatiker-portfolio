@@ -1,35 +1,53 @@
 +++
-title = "Week 2 – Portfolio and Starting the Project"
+title = "Uge 35 – Database Design og JPA"
 draft = false
 
 [build]
 list = "never"
 +++
 
-During the second week, I continued working on my **portfolio** and the documentation for the **Villa Room Booking System**.
+I denne uge arbejdede jeg videre med **Maler & Håndværk** og begyndte at opbygge databasen til projektet.
 
-I added the **Project Report** to the portfolio and organized the project pages so that the report, DevLog, diagrams and technologies are easy to find.
+Jeg arbejdede med **PostgreSQL** som database og brugte **JPA/Hibernate** til at forbinde Java-programmet med databasen.
 
-I also created the **DevLog**, where I can document my work and progress week by week throughout the semester. This helps me keep an overview of what I have done and how the project develops over time.
+Jeg begyndte at oprette de vigtigste **entities**, som repræsenterer data i systemet.
 
-At the same time, I started building the **Villa Room Booking System** in IntelliJ. I created the first classes and began working on the structure of the program.
+Jeg arbejdede blandt andet med:
 
-I also started working with the **database** and setting up the connection between the application and the database. This is the first step towards storing and working with the data needed for the booking system.
+- `Person`
+- `Bruger`
+- `Admin`
+- `Medarbejder`
+- `Service`
+- `Booking`
+- `WorkRequest`
 
-## What I worked on
+Jeg begyndte også at arbejde med relationerne mellem de forskellige entities. For eksempel skal en booking kunne være forbundet med en bruger og en service.
 
-- **Portfolio** – Continued improving and organizing my portfolio.
-- **Project Report** – Added the project report and organized the project documentation.
-- **DevLog** – Created the DevLog to document my progress week by week.
-- **IntelliJ project** – Started building the Villa Room Booking System and created the first classes.
-- **Database** – Started setting up the database and the connection between the application and the database.
+## Hvad jeg arbejdede med
 
-## Project Report
+- **PostgreSQL** – Bruges som database til projektet.
+- **JPA/Hibernate** – Bruges til kommunikationen mellem Java og databasen.
+- **Entities** – Oprettede de første klasser, som repræsenterer data i databasen.
+- **Relationships** – Arbejdede med relationer mellem entities.
+- **Database Design** – Arbejdede videre med strukturen af databasen.
 
-More details about the project can be found in my Project Report:
+## JPA
 
-**[View Project Report](../../report/)**
+Jeg brugte forskellige JPA-annotations, blandt andet:
+
+- `@Entity`
+- `@Id`
+- `@GeneratedValue`
+- `@ManyToOne`
+- `@OneToMany`
+
+JPA gør det muligt at arbejde med Java-objekter, mens Hibernate håndterer kommunikationen med databasen.
+
+## Projektets struktur
+
+I denne uge begyndte projektet at gå fra planlægning og diagrammer til en rigtig Java-applikation med database og entities.
 
 ---
 
-[← Back](/projects/project1/devlog/)
+[← Tilbage](/projects/project1/devlog/)

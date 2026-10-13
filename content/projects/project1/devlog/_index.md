@@ -6,20 +6,19 @@ showInRecent = false
 +++
 
 ![DevLog](devlog.png)
+## [Uge 34 – Planlægning og User Stories](week1/)
 
-## [Week 1 – Project Planning and User Stories](week1/)
+## [Uge 35 – Database Design og JPA](week2/)
 
-## [Week 2 – Portfolio and Starting the Project](week2/)
+## [Uge 36 – DAO og CRUD Operations](week3/)
 
-## [Week 3 – Database Design and JPA](week3/)
+## [Uge 37 – Service Layer og Menu](week4/)
 
-## [Week 4 – Entities and Relationships](week4/)
+## [Uge 38 – Bookingfunktionalitet og DAO-integrationstests](week5/)
 
-## [Week 5 – DAO and CRUD Operations](week5/)
+## [Uge 39 – Geoapify API og integration](week6/)
 
-## [Week 6 – Service Layer and Business Logic](week6/)
-
-## [Week 7 – User Authentication and Roles](week7/)
+## [Uge 40 – Concurrency, threads, e-mail, logging og API-dokumentation](week7/)
 
 ## [Week 8 – Room Management](week8/)
 

@@ -1,25 +1,52 @@
 +++
-title = "Week 3"
+title = "Uge 36 – DAO og CRUD Operations"
 draft = false
 
 [build]
 list = "never"
 +++
 
-This week, I continued working on the **Villa Room Booking System**.
+I denne uge arbejdede jeg videre med **Maler & Håndværk** og begyndte at implementere **DAO-laget**.
 
-## What I worked on
+DAO står for **Data Access Object** og bruges til at håndtere kommunikationen mellem Java-programmet og databasen.
 
-- Work completed during Week 3 will be documented here.
-- New features, changes and technical decisions will be added as the project develops.
-- Relevant diagrams, database changes and implementation details will also be documented.
+Jeg oprettede DAO-klasser til de forskellige dele af systemet, så databasekoden er adskilt fra resten af programmet.
 
-## Project Report
+## Hvad jeg arbejdede med
 
-More details about the project can be found in my Project Report:
+Jeg arbejdede blandt andet med:
 
-**[View Project Report](../../report/)**
+- `BookingDAO`
+- `PersonDAO`
+- `ServiceDAO`
+- `WorkRequestDAO`
+- `OfferDAO`
+
+Jeg implementerede også **CRUD-operationer**.
+
+CRUD står for:
+
+- **Create** – Oprette nye data.
+- **Read** – Hente data fra databasen.
+- **Update** – Opdatere eksisterende data.
+- **Delete** – Slette data.
+
+## Databasekommunikation
+
+DAO-klasserne bruger **JPA/Hibernate** til at kommunikere med PostgreSQL-databasen.
+
+Jeg arbejdede med `EntityManager` og transactions til at gemme, hente, ændre og slette data.
+
+Strukturen begynder derfor at blive:
+
+`Java Application → DAO → JPA/Hibernate → PostgreSQL`
+
+## Resultat
+
+Efter denne uge kunne programmet begynde at arbejde med data i databasen gennem DAO-klasserne.
+
+Det gav en bedre struktur i projektet, fordi databasekommunikationen blev samlet i sit eget lag.
 
 ---
 
-[← Back](/projects/project1/devlog/)
+[← Tilbage](/projects/project1/devlog/)

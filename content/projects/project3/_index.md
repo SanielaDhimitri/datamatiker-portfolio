@@ -41,15 +41,6 @@ Customers can explore the available services and request help for different type
 - Murerarbejde
 - Reparationer i hjemmet
 
-## Technologies
-
-- Java
-- JPA / Hibernate
-- PostgreSQL
-- REST API
-- HTML / CSS
-- JavaScript
-
 ---
 
 [← Back]({{< relref "/projects/" >}})

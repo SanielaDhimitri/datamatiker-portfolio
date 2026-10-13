@@ -1,45 +1,51 @@
 +++
-title = "Week 4 - Entities and Relationships"
-date = "2026-09-04"
+title = "Uge 37 – Service Layer og Menu"
 draft = false
+
+[build]
+list = "never"
 +++
 
-## Week 4 - Entities and Relationships
+I denne uge arbejdede jeg videre med **Maler & Håndværk** og fokuserede på programmets struktur.
 
-This week I started implementing the entities for the **Maler & Håndværk** web application using Java, JPA and Hibernate.
+Jeg begyndte at arbejde med **Service Layer**, som ligger mellem Menu-klasserne og DAO-klasserne.
 
-The entities represent the main objects in the application and are mapped to tables in the database.
+Service-klasserne håndterer programmets logik og bruger DAO-klasserne, når der skal hentes eller gemmes data i databasen.
 
-### Main Entities
+## Menu-system
 
-- Customer
-- Craftsman
-- Service
-- ServiceRequest
-- Review
+Jeg oprettede forskellige Menu-klasser for at gøre programmet mere overskueligt og brugervenligt i konsollen.
 
-### JPA and Hibernate
+Jeg arbejdede blandt andet med:
 
-I worked with JPA annotations such as:
+- `MainMenu`
+- `PersonMenu`
+- `BookingMenu`
+- `WorkRequestMenu`
+- `OfferMenu`
 
-- `@Entity`
-- `@Id`
-- `@GeneratedValue`
-- `@Column`
-- `@OneToMany`
-- `@ManyToOne`
-- `@JoinColumn`
+`MainMenu` fungerer som programmets hovedmenu, hvor brugeren kan vælge, hvilken del af systemet der skal bruges.
 
-I also worked on defining the relationships between the entities.
+De andre Menu-klasser håndterer funktionaliteten for deres eget område.
 
-### What I Learned
+## Programmets struktur
 
-- How Java classes are mapped to database tables
-- How JPA relationships work
-- How foreign keys connect entities
-- How Hibernate manages entities in the database
+Projektet er nu opdelt i forskellige lag:
+
+`Menu → Service → DAO → JPA/Hibernate → PostgreSQL`
+
+- **Menu** – Håndterer brugerens input og valg.
+- **Service** – Håndterer programmets logik.
+- **DAO** – Håndterer kommunikationen med databasen.
+- **JPA/Hibernate** – Mapper Java-objekter til databasen.
+- **PostgreSQL** – Gemmer programmets data.
+
+## Resultat
+
+Denne struktur gør programmet mere overskueligt, fordi de forskellige klasser har forskellige ansvarsområder.
+
+Det gør det også lettere at arbejde videre med funktioner som Booking, WorkRequest, Offer og Person.
 
 ---
 
 [Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)
-
