@@ -1,46 +1,65 @@
+
 +++
-title = "Week 7 - User Authentication and Roles"
-date = "2026-09-04"
+title = "Uge 7 – Routes, HTTP-tests, REST Assured og Fejlhåndtering"
+date = "2026-10-02"
 draft = false
 +++
 
-## Week 7 - User Authentication and Roles
+## Uge 7 – Routes, HTTP-tests, REST Assured og Fejlhåndtering
 
-This week I focused on user authentication and roles for the **Maler & Håndværk** web application.
+I denne uge har jeg arbejdet med **Javalin Routes, HTTP-requests, REST Assured, fejlhåndtering og validering** i mit Maler & Håndværk-projekt.
 
-The goal is to control who can access different parts of the application.
+### Javalin Routes
 
-### User Roles
+Jeg har lært, hvordan Routes forbinder HTTP-endpoints med Controller-metoder.
 
-The application can have different roles:
+**Client → Routes → Controller → Service → DAO → PostgreSQL**
 
-- Customer
-- Craftsman
-- Admin
+Jeg har arbejdet med HTTP-metoderne:
 
-### Authentication
+- **GET** – Henter data.
+- **POST** – Opretter data.
+- **PUT/PATCH** – Opdaterer data.
+- **DELETE** – Sletter data.
 
-I worked on the basic concepts of:
+### HTTP-tests
 
-- User registration
-- User login
-- Password handling
-- User roles
-- Access control
+Jeg har brugt `.http`-filer i IntelliJ IDEA til at sende requests og kontrollere JSON-responses og statuskoder.
 
-### Role Permissions
+### REST Assured
 
-Different users should have different permissions.
+Jeg har arbejdet med REST Assured til automatiseret test af REST API’et. Testene kontrollerer statuskoder og JSON-svar. Ved beskyttede endpoints sendes et JWT med den nødvendige brugerrolle.
 
-For example, customers can create service requests, craftsmen can manage assigned jobs, and administrators can manage the system.
+Jeg har lært at bruge:
 
-### What I Learned
+- `given()` – Forbereder requesten.
+- `when()` – Sender requesten.
+- `then()` – Kontrollerer svaret.
 
-- How authentication works
-- How user roles can control access
-- How to protect parts of an application
-- How different users can have different permissions
+### JUnit, Hamcrest og CRUD
+
+Jeg har brugt **JUnit** og **Hamcrest** til at kontrollere API'ets funktioner.
+
+Jeg har arbejdet med tests af CRUD-operationer: Create, Read, Update og Delete.
+
+### Fejlhåndtering og validering
+
+Jeg har lært at håndtere ugyldige requests og bruge korrekte HTTP-statuskoder:
+
+- `200 OK` – Request gennemført.
+- `201 Created` – Ressource oprettet.
+- `400 Bad Request` – Ugyldige data.
+- `404 Not Found` – Ressource findes ikke.
+- `500 Internal Server Error` – Serverfejl.
+
+Jeg har også arbejdet med validering af input og exception handling i Javalin.
+
+### Hvad har jeg lært?
+
+Jeg har fået en bedre forståelse af, hvordan REST API-endpoints fungerer, og hvordan de testes automatisk med **REST Assured, JUnit og Hamcrest**.
+
+Jeg har også lært, hvorfor validering og fejlhåndtering er vigtige i backendudvikling.
 
 ---
 
-[Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)
+[← Tilbage til udviklingsloggen](/datamatiker-portfolio/projects/project3/devlog/)

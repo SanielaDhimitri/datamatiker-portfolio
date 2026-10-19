@@ -1,43 +1,65 @@
+
 +++
-title = "Week 5 - DAO and CRUD Operations"
-date = "2026-09-04"
+title = "Uge 5 – REST API, Concurrency, Threads og Dataintegration"
+date = "2026-09-18"
 draft = false
 +++
 
-## Week 5 - DAO and CRUD Operations
+## Uge 5 – REST API, Concurrency, Threads og Dataintegration
 
-This week I focused on creating the DAO layer for the **Maler & Håndværk** web application.
+I denne uge har jeg arbejdet med **REST API, Javalin, HTTP, JSON og Concurrency** i mit Maler & Håndværk-projekt.
 
-The DAO layer is responsible for communicating with the database and managing the application data.
+### REST API og Javalin
 
-### CRUD Operations
+Jeg har lært, hvordan et REST API kommunikerer med klienter gennem HTTP-requests og responses.
 
-I worked with the main CRUD operations:
+Jeg har arbejdet med følgende HTTP-metoder:
 
-- Create â€“ add new data
-- Read â€“ retrieve data from the database
-- Update â€“ modify existing data
-- Delete â€“ remove data
+- **GET** – Henter data.
+- **POST** – Opretter data.
+- **PUT/PATCH** – Opdaterer data.
+- **DELETE** – Sletter data.
 
-### DAO Structure
+Jeg har også arbejdet med **Javalin** til at oprette endpoints.
 
-I started creating DAO classes for the main entities, such as:
+```java
+Javalin app = Javalin.create();
 
-- CustomerDAO
-- CraftsmanDAO
-- ServiceDAO
-- ServiceRequestDAO
-- ReviewDAO
+app.get("/", ctx -> ctx.result("Maler & Håndværk API"));
 
-### What I Learned
+app.start(7070);
+```
 
-- How the DAO pattern works
-- How to use `EntityManager`
-- How to save and retrieve entities
-- How to update and delete database records
-- How to separate database logic from the rest of the application
+### JSON og Database
+
+Jeg har arbejdet med JSON til at sende og modtage data mellem klienten og serveren.
+
+Jeg har også lært, hvordan Javalin, JPA/Hibernate og PostgreSQL arbejder sammen.
+
+**Client → Javalin → Java → JPA/Hibernate → PostgreSQL**
+
+### Concurrency og Threads
+
+Jeg har arbejdet med klassen `ChatTask`,
+som implementerer `Callable<String>`.
+
+ChatTask sender kundens spørgsmål til ChatService og returnerer svaret. 
+ExecutorService udfører opgaven i en thread, og Future bruges til at hente svaret.
+
+På den måde kan systemet behandle flere chatopgaver samtidigt.
+
+### Dataintegration
+
+Jeg har arbejdet med Google Gemini API gennem ChatService. 
+Kundens spørgsmål sendes til det eksterne API, 
+og svaret returneres til klienten.
+
+### Hvad har jeg lært?
+
+Jeg har fået en bedre forståelse af, hvordan REST API'er fungerer, og hvordan data sendes mellem Java og PostgreSQL.
+
+Jeg har også lært, hvordan **Threads og Concurrency** bruges til at håndtere flere opgaver i en backendapplikation.
 
 ---
 
-[Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)
-
+[← Tilbage til udviklingsloggen](/datamatiker-portfolio/projects/project3/devlog/)

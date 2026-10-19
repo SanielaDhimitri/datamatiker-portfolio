@@ -1,41 +1,69 @@
+
 +++
-title = "Week 3 - Database Design"
+title = "Uge 3 – Databasedesign, ER-diagram og Domænemodel"
 date = "2026-09-04"
 draft = false
 +++
 
-## Week 3 - Database Design
+## Uge 3 – Databasedesign, ER-diagram og Domænemodel
 
-This week I focused on designing the database for the **Maler & Håndværk** web application.
+I denne uge har jeg arbejdet med at designe databasen til mit **Maler & Håndværk** REST API-projekt.
 
-I started identifying the main entities needed to store information about customers, services and customer requests.
+Fokus var på **Entities, relationer, ER-diagram og Domænemodel**.
 
-### Main Entities
+### Databasedesign
 
-- Customer
-- Service
-- Service Request
-- Craftsman
-- Review
+Jeg har identificeret fire centrale Entities:
 
-### Database Planning
+- **User** – Registrerede brugere og administratorer.
+- **WorkRequest** – Kundernes arbejdsforespørgsler.
+- **Service** – Virksomhedens ydelser.
+- **Offer** – Tilbud til kunder.
 
-I worked on defining:
+### Relationer mellem Entities
 
-- Primary keys
-- Foreign keys
-- Relationships between entities
-- Required fields for each entity
-- The structure of the ER diagram
+Jeg har arbejdet med følgende relationer:
 
-### What I Learned
+- **One-to-Many:** En User kan have flere WorkRequests.
+- **Many-to-Many:** En WorkRequest kan indeholde flere Services.
+- **One-to-Many:** En WorkRequest kan have flere Offers.
 
-- How to design a relational database
-- How entities are connected
-- How primary and foreign keys work
-- How to create an ER diagram before implementing the database
+Jeg har også planlagt, at kunder kan sende arbejdsforespørgsler uden at oprette en bruger.
+
+### ER-diagram 
+
+Jeg har arbejdet med ER-diagram, som viser databasetabeller, nøgler og relationer.
+
+### Primary Key og Foreign Key
+
+Jeg har lært forskellen mellem:
+
+- **Primary Key (PK)** – Identificerer en række i databasen.
+- **Foreign Key (FK)** – Forbinder data mellem tabeller.
+
+Jeg har også arbejdet med databasenormalisering for at undgå unødvendige gentagelser af data.
+
+### Forberedelse til JPA og Hibernate
+
+Jeg har planlagt, hvordan Entities og relationer senere skal implementeres med JPA-annotationer som:
+
+`@Entity`, `@Id`, `@OneToMany`, `@ManyToOne` og `@ManyToMany`.
+
+### Domænemodel
+
+Jeg har arbejdet med en domænemodel, som viser systemets vigtigste begreber: **User, WorkRequest, Service og Offer**.
+
+Modellen viser, hvordan en bruger kan have flere arbejdsforespørgsler, 
+og hvordan en arbejdsforespørgsel kan indeholde flere ydelser og have flere tilbud.
+
+### Hvad har jeg lært?
+
+Jeg har lært at designe en relationel database og beskrive relationerne mellem systemets vigtigste objekter.
+
+Jeg har også udarbejdet et ER-diagram og en domænemodel, som jeg har indsat i projektrapporten.
+
+Arbejdet har givet mig et godt grundlag for at implementere JPA Entities og PostgreSQL i næste uge.
 
 ---
 
-[Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)
-
+[← Tilbage til udviklingsloggen](/datamatiker-portfolio/projects/project3/devlog/)

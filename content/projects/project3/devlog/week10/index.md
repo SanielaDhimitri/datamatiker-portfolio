@@ -1,44 +1,74 @@
+
 +++
-title = "Week 10 - Job Management"
-date = "2026-09-04"
+title = "Uge 10 – DevOps, Docker og GitHub Actions"
+date = "2026-10-23"
 draft = false
 +++
 
-## Week 10 - Job Management
+## Uge 10 – DevOps, Docker og GitHub Actions
 
-This week I focused on managing jobs in the **Maler & Håndværk** web application.
+I denne uge har jeg arbejdet med **DevOps, Docker, Maven og GitHub Actions** i mit Maler & Håndværk-projekt.
 
-When a customer sends a service request, the company can review the request and assign the job to the appropriate craftsman.
+Fokus var på at forstå containere, automatisering og build-processen i Java.
 
-### Job Management
+### DevOps og Docker
 
-The system can manage:
+Jeg har lært, hvordan DevOps bruges til at automatisere udviklingsprocessen.
 
-- Customer requests
-- Job assignments
-- Craftsmen
-- Scheduled dates
-- Job status
-- Completed jobs
+Jeg har arbejdet med **Docker Desktop** og undersøgt forskellen mellem Docker Image, Container og Docker Engine.
 
-### Job Status
+Jeg har også brugt Docker i forbindelse med PostgreSQL og Testcontainers til databasetests.
 
-A job can have different statuses:
+### Maven
 
-- Pending
-- Assigned
-- In Progress
-- Completed
-- Cancelled
+Jeg har brugt Maven til at håndtere dependencies og bygge projektet.
 
-### What I Learned
+```bash
+mvn compile
+mvn test
+mvn clean package
+```
 
-- How to manage customer jobs
-- How to assign a craftsman to a job
-- How to track the progress of a job
-- How to update job status
-- How to connect customers, services and craftsmen
+Maven bruger `pom.xml` til projektets dependencies og konfiguration.
+
+### Git og GitHub
+
+Jeg har brugt Git til versionsstyring og GitHub til at gemme projektet.
+
+```bash
+git add .
+git commit -m "Update project"
+git push
+```
+
+### GitHub Actions – CI
+
+Jeg har arbejdet med GitHub Actions til at automatisere build-processen.
+
+Workflowet bruger **Java 25, Eclipse Temurin og Maven** og starter ved push eller pull request til `main`.
+
+```bash
+mvn clean package -DskipTests
+```
+
+Kommandoen bygger projektet uden at køre tests.
+
+### Udfordringer
+
+Jeg har arbejdet med at:
+
+- Kontrollere Docker Desktop og Docker Engine.
+- Løse Maven- og buildproblemer.
+- Kontrollere Java-versioner og dependencies.
+- Pushe ændringer til GitHub.
+- Kontrollere GitHub Actions-workflowet.
+
+### Hvad har jeg lært?
+
+Jeg har fået en bedre forståelse af, hvordan Docker, Maven og GitHub Actions arbejder sammen.
+
+Jeg har også lært, hvordan **Continuous Integration (CI)** kan automatisere builds og opdage fejl i projektet.
 
 ---
 
-[Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)
+[← Tilbage til udviklingsloggen](/datamatiker-portfolio/projects/project3/devlog/)

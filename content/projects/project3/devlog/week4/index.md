@@ -1,45 +1,75 @@
+
 +++
-title = "Week 4 - Entities and Relationships"
-date = "2026-09-04"
+title = "Uge 4 – JPA, Entities, Relationer og PostgreSQL"
+date = "2026-09-11"
 draft = false
 +++
 
-## Week 4 - Entities and Relationships
+## Uge 4 – JPA, Entities, Relationer og PostgreSQL
 
-This week I started implementing the entities for the **Maler & Håndværk** web application using Java, JPA and Hibernate.
+I denne uge har jeg arbejdet med **JPA, Hibernate og PostgreSQL** i mit Maler & Håndværk-projekt.
 
-The entities represent the main objects in the application and are mapped to tables in the database.
+Fokus var på at oprette Entities, implementere relationer og teste databasen.
 
-### Main Entities
+### JPA og Hibernate
 
-- Customer
-- Craftsman
-- Service
-- ServiceRequest
-- Review
+Jeg har lært, hvordan JPA og Hibernate bruges til at gemme Java-objekter i en relationel database.
 
-### JPA and Hibernate
+Jeg har arbejdet med annotationer som:
 
-I worked with JPA annotations such as:
+- `@Entity` – Definerer en database-entity.
+- `@Id` – Angiver Primary Key.
+- `@GeneratedValue` – Genererer ID automatisk.
+- `@Enumerated` – Gemmer enum-værdier.
 
-- `@Entity`
-- `@Id`
-- `@GeneratedValue`
-- `@Column`
-- `@OneToMany`
-- `@ManyToOne`
-- `@JoinColumn`
+### Entities og Enums
 
-I also worked on defining the relationships between the entities.
+Jeg har arbejdet med fire centrale Entities:
 
-### What I Learned
+- **User** – Registrerede brugere.
+- **WorkRequest** – Kundernes arbejdsforespørgsler.
+- **Service** – Virksomhedens ydelser.
+- **Offer** – Tilbud til arbejdsforespørgsler.
 
-- How Java classes are mapped to database tables
-- How JPA relationships work
-- How foreign keys connect entities
-- How Hibernate manages entities in the database
+Jeg har også brugt `EnumType.STRING` til at gemme statusværdier som tekst.
+
+```java
+@Enumerated(EnumType.STRING)
+private WorkRequestStatus status;
+```
+
+### JPA-relationer
+
+Jeg har arbejdet med:
+
+- **One-to-Many** – En WorkRequest kan have flere Offers.
+- **Many-to-One** – Et Offer tilhører én WorkRequest.
+- **Many-to-Many** – En WorkRequest kan have flere Services.
+
+Jeg har også arbejdet med en valgfri relation mellem User og WorkRequest, så besøgende kan sende forespørgsler uden login.
+
+### PostgreSQL og EntityManager
+
+Jeg har arbejdet med at forbinde Java-applikationen til PostgreSQL og bruge `EntityManager` til databaseoperationer.
+
+Jeg har lært at bruge transaktioner med `begin()` og `commit()`.
+
+### Database Testing
+
+Jeg har arbejdet med **JUnit og Testcontainers** til at teste databaseoperationer.
+
+Testene omfatter oprettelse, hentning, opdatering og sletning af data samt JPA-relationer.
+
+### Git og GitHub
+
+Jeg har brugt Git og GitHub til at gemme ændringer, oprette commits og pushe projektet til repository.
+
+### Hvad har jeg lært?
+
+Jeg har fået en bedre forståelse af, hvordan **Java Entities, JPA-relationer og PostgreSQL** arbejder sammen.
+
+Jeg har også lært at teste databaseoperationer og bruge Git til versionsstyring.
 
 ---
 
-[Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)
-
+[← Tilbage til udviklingsloggen](/datamatiker-portfolio/projects/project3/devlog/)

@@ -1,46 +1,39 @@
+
 +++
-title = "DevLog"
+title = "Udviklingslog"
 date = "2026-01-04"
 draft = false
 showInRecent = false
 hideChildPages = true
 +++
 
+# Udviklingslog – Maler & Håndværk
 
-# Development Log – Maler & Håndværk
+Denne udviklingslog dokumenterer udviklingsprocessen af REST API'et til **Maler & Håndværk**
+samt arbejdet med min portfolio gennem semesteret.
 
-This DevLog documents the development process of the **Maler & Håndværk** web application throughout the semester.
+### [Uge 1 – Planlægning, Repository og Brugerhistorier](week1/)
 
-### [Week 1 – Project Idea and Planning](week1/)
+### [Uge 2 – Portfolio med Hugo og GitHub Pages](week2/)
 
-### [Week 2 – Requirements and User Stories](week2/)
+### [Uge 3 – Databasedesign, ER-diagram og Domænemodel](week3/)
 
-### [Week 3 – Database Design](week3/)
+### [Uge 4 –JPA, Entities, Relationer, PostgreSQL og GitHub](week5/)
 
-### [Week 4 – Entities and Relationships](week4/)
+### [Uge 5 – REST API, Concurrency, (Threads) og Dataintegration](week5/)
 
-### [Week 5 – DAO and CRUD Operations](week5/)
+### [Uge 6 – DAO, CRUD, DTO, mapper, Service Layer og concurrency](week6/)
 
-### [Week 6 – Service Layer](week6/)
+### [Uge 7 – Routes, HTTP-tests, REST Assured og fejlhåndtering](week7/)
 
-### [Week 7 – User Authentication and Roles](week7/)
+### [Uge 8 – Sikkerhed, JWT, BCrypt og adgangskontrol](week8/)
 
-### [Week 8 – Services and Categories](week8/)
+### [Uge 9 – Concurrency og AI-chat med Gemini API](week9/)
 
-### [Week 9 – Customer Service Requests](week9/)
+### [Uge 10 – DevOps, Docker og GitHub Actions](week14/)
 
-### [Week 10 – Job Management](week10/)
-
-### [Week 11 – Frontend Development](week11/)
-
-### [Week 12 – Backend and Frontend Integration](week12/)
-
-### [Week 13 – Testing and Improvements](week13/)
-
-### [Week 14 – Final Testing](week14/)
-
-### [Week 15 – Final Project and Documentation](week15/)
+### [Uge 11 – Afsluttende test og projektdokumentation](week15/)
 
 ---
 
-[← Back](/projects/project3/)
+[← Tilbage til projektet](/datamatiker-portfolio/projects/project3/)

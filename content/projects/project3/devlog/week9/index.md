@@ -1,44 +1,67 @@
+
 +++
-title = "Week 9 - Customer Service Requests"
-date = "2026-09-04"
+title = "Uge 9 – Concurrency og AI-chat med Gemini API"
+date = "2026-10-16"
 draft = false
 +++
 
-## Week 9 - Customer Service Requests
+## Uge 9 – Concurrency og AI-chat med Gemini API
 
-This week I focused on how customers can create and manage service requests in the **Maler & Håndværk** web application.
+I denne uge har jeg arbejdet med at integrere **Google Gemini API** i mit **Maler & Håndværk** REST API-projekt.
 
-A customer can select a service and describe the work that needs to be done in their home.
+Jeg har også arbejdet med **concurrency, threads og baggrundsopgaver** i Java.
 
-### Service Request
+### Gemini API
 
-A service request can contain:
+Jeg har arbejdet med at integrere Gemini AI, så brugere kan stille spørgsmål om malerarbejde og håndværksydelser.
 
-- Customer information
-- Selected service
-- Description of the job
-- Address
-- Preferred date
-- Request status
+Jeg har lært, hvordan en Java-backend sender HTTP-requests til en ekstern API og modtager JSON-responses.
 
-### Request Status
+### ChatController og ChatService
 
-A request can have different statuses:
+Jeg har arbejdet med følgende struktur:
 
-- Pending
-- Accepted
-- In Progress
-- Completed
-- Cancelled
+**Client → ChatController → ChatService → GeminiApi → Google Gemini API**
 
-### What I Learned
+- **ChatController** modtager HTTP-requests og returnerer svar.
+- **ChatService** håndterer chatlogikken.
+- **GeminiApi** står for HTTP-kommunikationen med Google Gemini.
+- **DTO'er** bruges til at overføre data.
 
-- How to create and store customer requests
-- How to connect a request to a customer
-- How to connect a request to a service
-- How to manage the status of a request
-- How different entities work together
+### API-nøgle
+
+Jeg har arbejdet med at beskytte API-nøglen ved hjælp af environment variables.
+
+```java
+String apiKey = System.getenv("GEMINI_API_KEY");
+```
+
+På den måde undgår jeg at gemme API-nøglen direkte i kildekoden.
+
+### Concurrency og Threads
+
+Jeg har arbejdet med `ChatTask`, som implementerer `Callable<String>`.
+
+ExecutorService udfører chatopgaver i en thread pool med 10 worker threads. 
+Future bruges til at hente svaret.
+
+Systemet venter højst 30 sekunder. 
+Hvis tiden overskrides, forsøges opgaven annulleret, og API’et returnerer `504 Gateway Timeout`.
+
+Flere chatopgaver kan behandles samtidigt, men den enkelte request venter på svaret gennem `Future.get()`.
+
+### Test og fejlhåndtering
+
+Jeg har arbejdet med at forstå, hvordan **ChatService** kan testes med Mockito uden at kalde Gemini API direkte.
+
+Jeg har også gennemgået håndtering af ugyldige requests, manglende API-nøgler og fejl fra eksterne tjenester.
+
+### Hvad har jeg lært?
+
+Jeg har fået en bedre forståelse af, hvordan en Java-backend kommunikerer med eksterne API'er, og hvordan AI kan integreres i et REST API.
+
+Jeg har også lært mere om concurrency, threads og baggrundsopgaver.
 
 ---
 
-[Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)
+[← Tilbage til udviklingsloggen](/datamatiker-portfolio/projects/project3/devlog/)

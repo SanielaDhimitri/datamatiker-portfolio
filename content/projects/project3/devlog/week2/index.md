@@ -1,38 +1,56 @@
+
 +++
-title = "Week 2 - Requirements and User Stories"
-date = "2026-09-04"
+title = "Uge 2 – Portfolio med Hugo og GitHub Pages"
+date = "2026-08-28"
 draft = false
 +++
 
-## Week 2 - Requirements and User Stories
+## Uge 2 – Portfolio med Hugo og GitHub Pages
 
-This week I focused on defining the requirements for the **Maler & Håndværk** web application.
+I denne uge har jeg arbejdet med at udvikle min personlige **Datamatiker-portfolio** 
+ved hjælp af **Hugo, Blowfish og GitHub Pages**.
 
-The goal was to understand what the customer should be able to do on the website and what functionality the application needs.
+Formålet er at dokumentere mine projekter og min faglige udvikling gennem semesteret.
 
-### Main Requirements
+### Hugo og Blowfish
 
-- View available services
-- Choose a type of service
-- Send a request for work
-- Provide contact information
-- Describe the job
-- View the status of a request
-- Leave a review after the work is completed
+Jeg har brugt **Hugo** til at oprette hjemmesiden med Markdown-filer og **Blowfish** som tema.
 
-### User Stories
+Jeg har arbejdet med:
 
-- As a customer, I want to view the available services so I can find the right type of help.
-- As a customer, I want to describe my task so the company understands what work is needed.
-- As a customer, I want to send a service request so I can get help with my home.
-- As a customer, I want to see the status of my request.
+- Oprettelse og organisering af sider.
+- Markdown og TOML front matter.
+- Design, navigation og links.
+- Projektbeskrivelser og dokumentation.
 
-### What I Learned
+### Portfolioens struktur
 
-- How to define functional requirements
-- How to create user stories
-- How requirements help structure a software project
+Jeg har organiseret mit **Maler & Håndværk**-projekt i følgende sektioner:
+
+- **Projektoversigt** – Introduktion til projektet.
+- **DevLog** – Ugentlig dokumentation.
+- **Rapport** – Teknisk projektdokumentation.
+
+Denne struktur gør det nemmere at følge projektets udvikling.
+
+### GitHub Pages og GitHub Actions
+
+Jeg har arbejdet med at publicere min portfolio gennem **GitHub Pages**.
+
+Jeg har også brugt **GitHub Actions** til automatisk at bygge og publicere hjemmesiden, når jeg pusher ændringer til GitHub.
+
+### Git og Markdown
+
+Jeg har brugt Git til versionsstyring og Markdown til at skrive indholdet.
+
+Jeg har også arbejdet med at rette links mellem projektsiderne, DevLog og rapporten.
+
+### Hvad har jeg lært?
+
+Jeg har fået en bedre forståelse af, hvordan man opbygger og publicerer en hjemmeside med **Hugo, Blowfish og GitHub Pages**.
+
+Jeg har også lært at bruge GitHub Actions til automatisk deployment og organisere teknisk dokumentation.
 
 ---
 
-[Back to DevLog](/datamatiker-portfolio/projects/project3/devlog/)
+[← Tilbage til udviklingsloggen](/datamatiker-portfolio/projects/project3/devlog/)

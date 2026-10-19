@@ -1040,7 +1040,7 @@ article:has(.prose img[src*="technology-stack"]) > header h1 {
     margin: 0 0 12px 0 !important;
 }
 
-/* Heq container-in e dytë */
+/*fjern container-2 */
 article:has(.prose img[src*="technology-stack"]) .prose {
     background: transparent !important;
     border: none !important;
@@ -1049,4 +1049,44 @@ article:has(.prose img[src*="technology-stack"]) .prose {
 
     padding: 0 !important;
     margin: 0 !important;
+}
+
+/* Foto+navn gå op */
+main > article:first-child {
+    margin-top: 15px !important;
+    margin-bottom: 20px !important;
+}
+
+/* mindre plce  */
+main > article:first-child > header {
+    padding-top: 0 !important;
+    margin-bottom: 25px !important;
+}
+
+/* My Projects  */
+main > section {
+    margin-top: 0 !important;
+}
+
+/* Kartat  My Projects */
+main > section > h2 {
+    margin-bottom: 25px !important;
+}
+
+main > section > h2 {
+    font-size: 1.7rem !important;
+}main > section > h2 {
+     font-size: 1.5rem !important;
+ }
+
+main > article:first-child h1 {
+    font-size: 2rem !important;
+}
+
+main > article:first-child > header .text-neutral-500 {
+    font-size: 1.2rem !important;
+}
+.main-menu > a:first-child {
+    font-size: 1.1rem !important;
+    padding: 8px 16px !important;
 }

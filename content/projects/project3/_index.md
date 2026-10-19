@@ -1,3 +1,4 @@
+
 +++
 title = "Maler & Håndværk"
 date = "2026-01-04"
@@ -5,34 +6,31 @@ draft = false
 hideChildPages = true
 +++
 
-
 <div style="display:flex; gap:10px; margin:25px 0; flex-wrap:wrap;">
 
 <a href="/datamatiker-portfolio/projects/project3/devlog/"
 style="border:1px solid #7c3aed !important; color:#c26d00 !important; border-radius:8px; padding:5px 12px; text-decoration:none !important;">
-DevLog
+Udviklingslog
 </a>
 
 <a href="/datamatiker-portfolio/projects/project3/report/"
 style="border:1px solid #7c3aed !important; color:#c26d00 !important; border-radius:8px; padding:5px 12px; text-decoration:none !important;">
-Report
+Rapport
 </a>
 
 </div>
 
-
-
 ![Maler & Håndværk](feature.png)
 
-## Project Description
+## Projektbeskrivelse
 
-A web application for a painting and home services company.
+Maler & Håndværk er et backendprojekt til en virksomhed, der tilbyder malerarbejde og forskellige håndværksydelser.
 
-The main focus is painting services, with additional services such as electrical work, plumbing, carpentry, masonry, and general home repairs.
+Formålet er at udvikle et REST API i backend, som kan håndtere arbejdsforespørgsler, ydelser, tilbud og brugere.
 
-Customers can explore the available services and request help for different types of work in their homes.
+Projektet er udviklet med Java og Javalin samt JPA/Hibernate og PostgreSQL til håndtering af data.
 
-## Services
+## Ydelser
 
 - Malerarbejde
 - Elektrikerarbejde
@@ -41,15 +39,22 @@ Customers can explore the available services and request help for different type
 - Murerarbejde
 - Reparationer i hjemmet
 
-## Technologies
+## Teknologier
 
-- Java
-- JPA / Hibernate
-- PostgreSQL
-- REST API
-- HTML / CSS
-- JavaScript
+- Java 25 og Javalin – Backend og REST API.
+- Maven – Dependencies og build.
+- JPA/Hibernate og PostgreSQL – Databasehåndtering.
+- JWT og BCrypt – Login og adgangskontrol.
+- Jackson og Java HttpClient – JSON og HTTP-requests.
+- Google Gemini API – AI-chatbot.
+- ExecutorService, Callable og Future – Samtidige chatopgaver.
+- JUnit, Mockito, REST Assured og Hamcrest – Test.
+- Docker og Testcontainers – Testdatabase.
+- SLF4J og Logback – Logging.
+- Git og GitHub – Versionsstyring.
+- GitHub Actions – Automatisk build.
+
+Selve portfoliosiden er lavet med Hugo og publiceret på GitHub Pages.
 
 ---
-
-[← Back]({{< relref "/projects/" >}})
+[← Tilbage]({{< relref "/projects/" >}})
