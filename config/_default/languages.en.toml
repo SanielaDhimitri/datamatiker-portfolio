@@ -1,18 +1,22 @@
-languageCode = "en"
-languageName = "English"
-weight = 1
+# Sidens sprog
+languageCode = "da"
+languageName = "Dansk"
+weight = 1                            # Sprogets rækkefølge
 
+# Visning og datoformat
 [params]
-displayName = "EN"
-isoCode = "en"
-rtl = false
-dateFormat = "2 January 2006"
+displayName = "DA"                    # Sprogets korte navn
+isoCode = "da"                        # Sprogets ISO-kode
+rtl = false                           # Teksten læses fra venstre mod højre
+dateFormat = "02.01.2006"             # Datoformat, f.eks. 04.01.2026
 
+# Information om forfatteren
 [params.author]
-name = "Saniela Dhimitri"
-headline = "Datamatiker Student"
-image = "img/img.png"
+name = "Saniela Dhimitri"             # Forfatterens navn
+headline = "Datamatikerstuderende"    # Kort beskrivelse af forfatteren
+image = "img/img.png"                 # Sti til profilbilledet
 
+# Links til GitHub, LinkedIn og e-mail
 links = [
     { github = "https://github.com/SanielaDhimitri" },
     { linkedin = "https://www.linkedin.com/in/saniela-dhimitri-2a461123a" },

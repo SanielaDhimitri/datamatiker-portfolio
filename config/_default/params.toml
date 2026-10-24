@@ -1,19 +1,19 @@
-colorScheme = "blowfish"
+colorScheme = "blowfish"          # Sidens farvetema
 
-mainSections = ["projects"]
+mainSections = ["projects"]       # Sektioner, der bruges til at vise de seneste indlæg
 
-[homepage]
-layout = "profile"
-showRecent = true
-showRecentItems = 3
-showMoreLink = true
-showMoreLinkDest = "projects/"
-cardView = true
+[homepage]                        # Indstillinger for forsiden
+layout = "profile"                # Vis forsiden med en forfatterprofil
+showRecent = true                 # Vis de seneste indlæg på forsiden
+showRecentItems = 3               # Vis højst 3 seneste indlæg
+showMoreLink = true               # Vis et link til flere indlæg
+showMoreLinkDest = "projects/"    # Link til siden med projekter
+cardView = true                   # Vis indlæggene som kort
 
-[list]
-cardView = true
-cardViewScreenWidth = false
+[list]                            # Indstillinger for listesider
+cardView = true                   # Vis indholdet som kort
+cardViewScreenWidth = false       # Begræns kortvisningen til sidens normale indholdsbredde
 
-[article]
-showAuthor = false
-showPagination = false
+[article]                         # Indstillinger for artikelsider
+showAuthor = false                # Skjul forfatteroplysninger
+showPagination = false            # Skjul navigation til forrige og næste artikel

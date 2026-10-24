@@ -1,8 +1,6 @@
-[[main]]
-name = "About Me"
-pageRef = "about"
-identifier ="dyete6"
-weight = 10
 
-[[footer]]
-none = "none"
+[[main]]                             # Menupunkt i hovedmenuen
+name = "Om mig"                       # Navnet, der vises i menuen
+pageRef = "about"                     # Henvisning til siden "about"
+identifier = "dyete6"                 # Menupunktets unikke ID
+weight = 10                           # Rækkefølge i menuen – lavere tal vises først

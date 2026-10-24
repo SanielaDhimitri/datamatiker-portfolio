@@ -1,28 +1,30 @@
-# Datamatiker Portfolio
+# Datamatikerportfolio
 
-This repository contains my Datamatiker portfolio and documents my work and development throughout my studies.
+Dette repository indeholder min portfolio og dokumenterer mit arbejde og min faglige udvikling gennem datamatikeruddannelsen.
 
-## Portfolio Content
+Jeg har brugt temaet Blowfish til min portfolio. Temaet styrer sidens udseende og opbygning. Jeg har tilpasset sproget til dansk, tilføjet min profil og indstillet menuen og visningen af mine projekter.
 
-- Software development projects
-- Villa Room Booking System
-- Project documentation
+## Indhold
+
+- Softwareudviklingsprojekter
+- Maler og Håndværk
+- Projektdokumentation
 - DevLog
-- Diagrams
-- Technologies and tools
+- Diagrammer
+- Teknologier og værktøjer
 
-## Technologies
+## Teknologier
 
-The portfolio is built with:
+Portfolioen er bygget med:
 
 - Hugo
 - Blowfish
 - Markdown
 - HTML
 - CSS
-- Git & GitHub
+- Git og GitHub
 
-## Author
+## Forfatter
 
 **Saniela Dhimitri**  
-Datamatiker Student
+Datamatikerstuderende
