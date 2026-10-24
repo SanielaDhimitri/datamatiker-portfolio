@@ -1090,3 +1090,17 @@ main > article:first-child > header .text-neutral-500 {
     font-size: 1.1rem !important;
     padding: 8px 16px !important;
 }
+
+/* Giver plads til teksten og luft nederst i kortet */
+.article-link--card {
+    height: auto !important;
+    min-height: 350px !important;
+    padding-bottom: 24px !important;
+    box-sizing: border-box;
+}
+
+/* Mindre billedhøjde flytter teksten op */
+.article-link--card .thumbnail_card {
+    height: 200px !important;
+    min-height: 200px !important;
+}
